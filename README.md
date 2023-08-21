@@ -11,8 +11,8 @@ ROS Dependencies:
 - [ROS-TCP-Endpoint ROS package](https://github.com/Unity-Technologies/ROS-TCP-Endpoint)
   
 Unity packages/assets (not needed if you use the executable, only if you want to play around with the simulator insides):
-- [YamlDotNet](https://assetstore.unity.com/packages/tools/integration/yamldotnet-for-unity-36292)
-- TODO - currently the terrain assets are broken, so we are looking for a new package for them
+- [YamlDotNet](https://assetstore.unity.com/packages/tools/integration/yamldotnet-for-unity-36292) - needed for using YAML to reconfigure the world, project will not compile without it
+- TODO - currently the terrain assets are broken (NO TREES OR GROUND TEXTURES RIGHT NOW), so we are looking for a new package for them 
 
 # Usage guide
 To use the HARDNAV simulator, there are two options:
