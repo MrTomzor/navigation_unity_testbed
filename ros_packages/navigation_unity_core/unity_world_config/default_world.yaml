@@ -1,0 +1,58 @@
+world_name: "station"
+
+session_seed: 42
+
+reload_scene: false
+respawn_random_objects: false
+
+spawn_area: "corner2"
+spawn_point_number: 2
+
+global_light_cycle_enabled: false
+global_light_cycle_start: 4
+global_light_cycle_seconds: 8
+global_light_cycle_min_light: 0.8
+global_light_cycle_max_light: 1.2
+global_light_pitch: 10
+global_light_yaw: 45
+
+global_directional_light_r: 10
+global_directional_light_g: 10
+global_directional_light_b: 10
+
+ambient_light_r: 10
+ambient_light_g: 10
+ambient_light_b: 10
+
+skybox_r: 10
+skybox_g: 10
+skybox_b: 10
+
+clouds_enabled: true
+clouds_height: 300
+clouds_density: 0 # 0 = no clouds, 1 = full overcast
+clouds_particle_scale: 1 # 1 = default, use e.g. 10 for low density of large particles
+clouds_brightness: 0.8 # 0 = black, 1 = white/color based on the gameobjects settings
+clouds_average_velocity_x: 100 #in meters per second in the x direction of Unitys coord system
+clouds_average_velocity_z: 100 #in meters per second in the z direction of Unitys coord system
+
+distracting_particles_enabled: true # dust from ground, 
+
+rain_enabled: false # dust from ground, 
+
+mediumsize_object_randomization_enabled: true
+mediumsize_object_randomization_rate: 0.2 # rate of varaiation relative to the default state (seen in editor) - will move some, delete/enable others
+
+distant_landmarks_enabled: true # distant = unreachable
+
+dynamic_ground_objects_numerosity: 1 # 0 = disabled, 1 = intended amount if enabled, >1 = just for any silliness you want
+dynamic_nonground_objects_numerosity: 1 # 0 = disabled, 1 = intended amount if enabled, >1 = just for any silliness you want
+
+door_locking_randomization_enabled: true
+door_locking_randomization_percentage_locked: 0.2
+# TODO - locking specific doors
+#
+dynamic_light_effects_enabled: false
+
+fog_enabled: false
+fog_density: 0.02

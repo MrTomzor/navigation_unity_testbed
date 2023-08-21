@@ -1,0 +1,7 @@
+<launch>
+
+  <!-- Start the TCP endpoint server -->
+  <node name="tcp_endpoint_server" pkg="ros_tcp_endpoint" type="default_server_endpoint.py" output="screen">
+  </node>
+
+</launch>

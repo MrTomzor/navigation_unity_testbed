@@ -1,0 +1,93 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3544602080672108149
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3544602080672108147}
+  - component: {fileID: 3544602080672108148}
+  - component: {fileID: 3173329151484171222}
+  m_Layer: 0
+  m_Name: WORLD_MANAGER
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3544602080672108147
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3544602080672108149}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 813.7779, y: -101.63138, z: 196.057}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3544602080672108148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3544602080672108149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9956d222d133af9c48401fdc0d719259, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _taskdefTopicName: task_definition
+  _robotSleepStateTopicName: robot_sleep_state
+  skyboxMaterial: {fileID: 0}
+  fogMaterial: {fileID: 0}
+  level: 0
+  timeElapsed: 0
+  task: explore
+  robotType: car
+  trialType: explore+kidnap+home
+  exploreTime: 1200
+  homingTimeMultiplier: 1.5
+  kidnapTimes: 10
+  taskMaxTime: 60
+  taskElapsedTime: 0
+  simpleRandomizationGroups: []
+  robotGameObject: {fileID: 0}
+  sessionSeed: 0
+  enableDayNightSimulation: 1
+  enableDayNightColorChange: 0
+  sunlightObject: {fileID: 0}
+  dayNightCycleSeconds: 120
+  dayNightMaxIntensity: 1.2
+  dayNightMinIntensity: 0.8
+  dayTime: 0
+  enableDynamicLightEffects: 1
+  baking_navmesh_for_terrain: 1
+  spawnAreas: []
+  sleepstateSendRate: 1
+  sleepstateElapsedTime: 0
+--- !u!114 &3173329151484171222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3544602080672108149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f73c26c6488aade2ac221f79c70cba7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manualControlOn: 1
+  debugCameraOn: 0
+  debugCamera: {fileID: 0}
+  mainStatsBackground: {fileID: 0}
+  mainStatsText: {fileID: 0}

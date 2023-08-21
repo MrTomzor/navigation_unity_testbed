@@ -1,0 +1,3 @@
+string task_type
+float32 task_seconds
+float32 task_elapsed_seconds

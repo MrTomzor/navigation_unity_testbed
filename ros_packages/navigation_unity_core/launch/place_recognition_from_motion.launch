@@ -1,0 +1,9 @@
+<launch>
+  <include file="$(find navigation_unity_core)/launch/unity_ros_core_nodes.launch"/>
+
+  <!-- Load the default_settings.yaml file from the config directory -->
+  <!-- <rosparam command="load" file="$(find navigation_unity_core)/config/default_settings.yaml"/> -->
+
+  <!-- Launch the node using the python script -->
+  <node name="place_recognition_from_motion_trial" pkg="navigation_unity_core" type="place_recognition_from_motion_trial.py" output="screen"/>
+</launch>
