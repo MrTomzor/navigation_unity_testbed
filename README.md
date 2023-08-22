@@ -12,7 +12,7 @@ ROS Dependencies:
   
 Unity packages/assets (not needed if you use the executable, only if you want to play around with the simulator insides):
 - [YamlDotNet](https://assetstore.unity.com/packages/tools/integration/yamldotnet-for-unity-36292) - needed for using YAML to reconfigure the world, project will not compile without it
-- TODO - currently the terrain assets are broken (NO TREES OR GROUND TEXTURES RIGHT NOW), so we are looking for a new package for them 
+- [DreamForestTree](https://assetstore.unity.com/packages/3d/vegetation/trees/dream-forest-tree-105297) - contains trees, vegetation and ground textures used in Forest1 and ground texture for ScifiBase1. You might want to add colliders to the trees, as they dont have them by default in the package.  
 
 # Usage guide
 To use the HARDNAV simulator, there are two options:
