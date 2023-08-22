@@ -26,7 +26,7 @@ The world is, after running the game, in some default state (e.g. clouds, positi
 To play around with changing the world settings, you can run the "session_cycler.py" node for showcasing changes of 4 world states, as shown in the video above, or run "place_recognition_from_motion_trial.py" for an example of how an active place recognition trial could work (you can test it on willing human subjects - tell them to try recognizing which area they are spawned in!)
 
 ## State of the project
-TODO
+IN PROGRESS, ETA 8/24/2023
 
 ## Builds
-TODO
+IN PROGRESS, ETA 8/24/2023
