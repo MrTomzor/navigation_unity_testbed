@@ -1,4 +1,4 @@
-# HARDNAV - Introduction
+## HARDNAV - Introduction
 Hi! Thank you for showing interest in our simulator! The full work-in-progress publication name is "HARDNAV - Simulator for Benchmarking Robust Navigation and Place Recognition in Large, Confusing and Highly Dynamic Environments". We hope this simulator can help you quickly test your perception and spatial intelligence methods against the extreme conditions that occur in the real world before doing costly real world experiments. Any feedback is greatly appreciated! This is still a work-in-progress, so some things are bound to break. If you want a stabler experience, please come back in a few weeks. If you want to dig around in this now, then great! The simulator is mostly built thanks to the Unity-Robotics-Hub (https://github.com/Unity-Technologies/Unity-Robotics-Hub) so that is worth checking out!
 
 Quick showcase of the simulator:
@@ -6,7 +6,7 @@ Quick showcase of the simulator:
 [<img src="https://img.youtube.com/vi/AT6wtF-p_fQ/hqdefault.jpg" width="600" height="300"
 />](https://www.youtube.com/embed/AT6wtF-p_fQ)
 
-# Dependencies
+## Dependencies
 ROS Dependencies:
 - [ROS-TCP-Endpoint ROS package](https://github.com/Unity-Technologies/ROS-TCP-Endpoint)
   
@@ -14,7 +14,7 @@ Unity packages/assets (not needed if you use the executable, only if you want to
 - [YamlDotNet](https://assetstore.unity.com/packages/tools/integration/yamldotnet-for-unity-36292) - needed for using YAML to reconfigure the world, project will not compile without it
 - [DreamForestTree](https://assetstore.unity.com/packages/3d/vegetation/trees/dream-forest-tree-105297) - contains trees, vegetation and ground textures used in Forest1 and ground texture for ScifiBase1. You might want to add colliders to the trees, as they dont have them by default in the package.  
 
-# Usage guide
+## Usage guide
 To use the HARDNAV simulator, there are two options:
 1) You can download one of the executable builds at the bottom of the readme,
 2) Or, to make modifications to the existing worlds, create new ones or add your own features into the worlds, you can download the Unity Hub from https://unity.com/download and open the "navigation_unity_project" folder as a Unity project.
@@ -25,8 +25,8 @@ The world is, after running the game, in some default state (e.g. clouds, positi
 
 To play around with changing the world settings, you can run the "session_cycler.py" node for showcasing changes of 4 world states, as shown in the video above, or run "place_recognition_from_motion_trial.py" for an example of how an active place recognition trial could work (you can test it on willing human subjects - tell them to try recognizing which area they are spawned in!)
 
-# State of the project
+## State of the project
 TODO
 
-# Builds
+## Builds
 TODO
