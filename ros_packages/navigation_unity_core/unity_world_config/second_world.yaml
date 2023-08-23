@@ -5,6 +5,7 @@ session_seed: 42
 reload_scene: false
 respawn_random_objects: false
 
+robot_type: "generic_space"
 spawn_area: "corner2"
 spawn_point_number: 2
 

@@ -249,6 +249,7 @@ MonoBehaviour:
   _infoTopicName: 
   _frameId: camera
   unity_camera: {fileID: 0}
+  last_render_time: 0
 --- !u!1 &548792571
 GameObject:
   m_ObjectHideFlags: 0
@@ -2173,6 +2174,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: feab2ad6fe011e490bf98f8b6f33d9e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enableGameControl: 1
   frontLeftWheelCollider: {fileID: 3578161979642594412}
   frontRightWheelCollider: {fileID: 3578161980169695036}
   rearLeftWheelCollider: {fileID: 3578161978782872421}

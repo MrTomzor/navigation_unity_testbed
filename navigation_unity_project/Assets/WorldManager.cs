@@ -38,7 +38,9 @@ public class WorldManager : MonoBehaviour
   public int level;
   public double timeElapsed;
   public string task = "explore";
-  public string robotType = "car";
+  public string robotType = "generic_wheeled";
+  public GameObject robotPrefab_GenericWheeled;
+  public GameObject robotPrefab_GenericSpace;
 
   public string trialType = "explore+kidnap+home"; // or guidedexplore+kidnap+gotox or guidedexplore+kidnap+gotox+gotox or explore+detectchanges
   /* SPECIFIC SETTINGS FOR EXPLOREKIDNAPHOME */
@@ -74,7 +76,7 @@ public class WorldManager : MonoBehaviour
   public bool enableDynamicLightEffects = true;
 
   /* ROBOT SPAWNING */
-  public List<GameObject> spawnAreas;
+  private LabeledZoneStringPublisher[] spawnAreas;
 
   /* DYNAMIC OBJECTS */
   private NavAreaManager[] groundDynamicObjectSpawners;
@@ -139,6 +141,9 @@ public class WorldManager : MonoBehaviour
       }
       else if(key == "spawn_point_number"){
         spawn_area_point_index = int.Parse(val);
+      }
+      else if(key == "robot_type"){
+        robotType = val;
       }
 
       /* LIGHT */
@@ -310,6 +315,7 @@ public class WorldManager : MonoBehaviour
     simpleRandomizationGroups = (ChildrenSpawnRandomizer[]) GameObject.FindObjectsOfType (typeof(ChildrenSpawnRandomizer));
     cloudsObject = GameObject.FindGameObjectsWithTag("Clouds")[0];
     rainObjects = GameObject.FindGameObjectsWithTag("Rain");
+    spawnAreas = (LabeledZoneStringPublisher[]) GameObject.FindObjectsOfType (typeof(LabeledZoneStringPublisher));
 
     {
       ParticleSystem ps = cloudsObject.GetComponent<ParticleSystem>();
@@ -395,23 +401,46 @@ scene_modify_flag  = true;
   }
 
   bool spawnRobot(string zonename, int spawnpoint_index){
-    foreach(GameObject _a in spawnAreas){
-      var area = _a.GetComponent<LabeledZoneStringPublisher>();
+    /* FIND ALL EXISTING ROBOTS AND SPAWNPOINT ORIGIN AND REMOVE */
+    var last_spawnpoint_tf_object = GameObject.Find("LAST_SPAWNPOINT_TF_ORIGIN");
+    if(last_spawnpoint_tf_object != null){
+      Destroy(last_spawnpoint_tf_object);
+    }
+    var existing_robots = GameObject.FindGameObjectsWithTag("Player");
+    foreach(GameObject o in existing_robots){
+      Destroy(o);
+    }
+
+    /* CHOOSE ROBOT TYPE */
+    GameObject usedPrefab;
+    if(robotType == "generic_wheeled"){
+      usedPrefab = robotPrefab_GenericWheeled;
+    }
+    else if(robotType == "generic_space"){
+      usedPrefab = robotPrefab_GenericSpace;
+    }
+    else{
+      Debug.Log("ERROR! robot type " + robotType + " NOT IMPLEMENTED! To add a new robot, add it to the spawnRobot() function in WorldManager.cs");
+      return false;
+    }
+
+    /* FIND AREA WHERE TO SPAWN ROBOT */
+    foreach(LabeledZoneStringPublisher area in spawnAreas){
       if(area == null){
         continue;
       }
       if(area.areaName == zonename){
-        Debug.Log("found zone, spawning");
-        /* TODO random perturbation */
+        Debug.Log("found spawn area, spawning");
+
+        GameObject spawnedObject = Instantiate(usedPrefab);
         var sptr = area.getSpawnpointTransform(spawnpoint_index);
-        robotGameObject.transform.position = sptr.position;
-        robotGameObject.transform.rotation = sptr.rotation;
+        spawnedObject.transform.position = sptr.position;
+        spawnedObject.transform.rotation = sptr.rotation;
         return true;
       }
     }
 
-    Debug.Log("couldnt find zone: ");
-    Debug.Log(zonename);
+    Debug.Log("ERROR! spawn area " + zonename + " DOES NOT EXIST!");
     return false;
   }
 

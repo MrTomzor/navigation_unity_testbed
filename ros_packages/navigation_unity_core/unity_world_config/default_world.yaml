@@ -2,10 +2,11 @@ world_name: "station"
 
 session_seed: 42
 
-reload_scene: false
-respawn_random_objects: false
+reload_scene: true
+respawn_random_objects: true
 
-spawn_area: "corner2"
+robot_type: "generic_space"
+spawn_area: "courtyard"
 spawn_point_number: 2
 
 global_light_cycle_enabled: false

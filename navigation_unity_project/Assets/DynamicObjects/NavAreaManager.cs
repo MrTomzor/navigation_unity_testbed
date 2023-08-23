@@ -29,6 +29,9 @@ public class NavAreaManager : MonoBehaviour
     }
 
     public void RespawnObjects(){
+      if(surface == null){
+        surface = GetComponent<NavMeshSurface>();
+      }
       surface.BuildNavMesh();
 
       foreach (Transform child in transform) {
