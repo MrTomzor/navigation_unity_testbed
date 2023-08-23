@@ -456,10 +456,13 @@ scene_modify_flag  = true;
         }
 
         /* ALSO ADD THE CAMERA AND ROBOT LINK TO THE SIM UI MANAGER */
-        var simmanager = GetComponent<SimUIManager>();
-        simmanager.controlledRobot = robotObject;
-        simmanager.debugCamera = GameObject.FindGameObjectsWithTag("DebugCamera")[0];
+        /* var simmanager = GetComponent<SimUIManager>(); */
+        /* simmanager.controlledRobot = robotObject; */
+        /* simmanager.debugCamera = GameObject.FindGameObjectsWithTag("DebugCamera")[0]; */
+        /* Debug.Log("DEBUGCAM NAME: " + simmanager.debugCamera.name + "PARENT NAME: " + simmanager.debugCamera.transform.parent.gameObject.name); */
+        /* /1* Debug.Log("FOUND CAMERA? " + string()) *1/ */
 
+          Debug.Log("SPAWNED ROBOT!");
         return true;
       }
     }

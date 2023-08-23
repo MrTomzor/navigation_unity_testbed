@@ -47,12 +47,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _taskdefTopicName: task_definition
   _robotSleepStateTopicName: robot_sleep_state
-  skyboxMaterial: {fileID: 0}
-  fogMaterial: {fileID: 0}
+  skyboxMaterial: {fileID: 2100000, guid: d291ca0ac84425a809917912e212f926, type: 2}
+  fogMaterial: {fileID: 2100000, guid: 1b49d7c37051497fab599b821feff5e0, type: 2}
   level: 0
   timeElapsed: 0
   task: explore
   robotType: car
+  robotPrefab_GenericWheeled: {fileID: 8493869189743019094, guid: a4e64a372e34d849ab45327e98fb2c3d, type: 3}
+  robotPrefab_GenericSpace: {fileID: 316876391518084241, guid: c185964c99f809fcc957e47de637a30f, type: 3}
+  missionOriginPrefab: {fileID: 3620730582183390204, guid: 32435a41f104cc31794b905d801d16b5, type: 3}
   trialType: explore+kidnap+home
   exploreTime: 1200
   homingTimeMultiplier: 1.5
@@ -69,9 +72,20 @@ MonoBehaviour:
   dayNightMaxIntensity: 1.2
   dayNightMinIntensity: 0.8
   dayTime: 0
+  globalLightAngle: {x: 0, y: 0, z: 0}
   enableDynamicLightEffects: 1
-  baking_navmesh_for_terrain: 1
-  spawnAreas: []
+  dynamicGroundObjectNumerosity: 1
+  dynamicNongroundObjectNumerosity: 1
+  cloudsEnabled: 1
+  rainEnabled: 0
+  cloudsDensity: 0.8
+  cloudsBaseRate: 300
+  cloudsBrightness: 1
+  cloudsParticleScale: 1
+  cloudsBaseParticleScale: {x: 0, y: 0, z: 0}
+  cloudsAverageVelocityX: 5
+  cloudsAverageVelocityZ: 5
+  distractingParticlesEnabled: 1
   sleepstateSendRate: 1
   sleepstateElapsedTime: 0
 --- !u!114 &3173329151484171222
@@ -88,6 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   manualControlOn: 1
   debugCameraOn: 0
+  controlledRobot: {fileID: 0}
   debugCamera: {fileID: 0}
   mainStatsBackground: {fileID: 0}
   mainStatsText: {fileID: 0}

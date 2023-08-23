@@ -6,13 +6,13 @@ using Unity.Robotics.Core;
 
 public class SimUIManager : MonoBehaviour
 {
-    public bool manualControlOn = true;
-    public bool debugCameraOn = false;
+    private bool manualControlOn = true;
+    private bool debugCameraOn = false;
 
     public GameObject controlledRobot;
     public GameObject debugCamera;
-    public GameObject mainStatsBackground;
-    public TMP_Text mainStatsText;
+    private GameObject mainStatsBackground;
+    private TMP_Text mainStatsText;
     
     double rtfMeasurePeriod = 1;
     double rtfNextMeasure = 1;
@@ -25,13 +25,13 @@ public class SimUIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+      /* UIParent = GameObject.FindGameObjectsWithTag("DebugCanvas")[0]; */
+      mainStatsBackground = GameObject.Find("DEBUG_CANVAS/Background");
+      mainStatsText = GameObject.Find("DEBUG_CANVAS/StatsText").GetComponent<TMP_Text>();
 
       rtfNextMeasure = Time.realtimeSinceStartup + rtfMeasurePeriod;
       rtfLastClocktime = Clock.time;
       texture = new RenderTexture (800, 480, 24);
-
-      debugCameraOn = false;
-      debugCamera.SetActive(false);
     }
 
     void RefreshText(){
@@ -56,9 +56,17 @@ public class SimUIManager : MonoBehaviour
     void Update()
     {
       if(Input.GetKeyDown("r")){
-        debugCameraOn = !debugCameraOn;
-        debugCamera.SetActive( debugCameraOn);
-        mainStatsBackground.SetActive(!debugCameraOn);
+        if(debugCamera == null){
+          var res = GameObject.FindGameObjectsWithTag("DebugCamera");
+          if(res.Length > 0){
+            debugCamera = res[0];
+          }
+        }
+        if(debugCamera != null){
+          debugCameraOn = !debugCameraOn;
+          debugCamera.SetActive(debugCameraOn);
+          mainStatsBackground.SetActive(!debugCameraOn);
+        }
       }
 
       if(Input.GetKeyDown("m")){

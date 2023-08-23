@@ -8437,29 +8437,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3544602080672108148, guid: 085551d1f3c9f63c093ca3c25c80c740, type: 3}
-      propertyPath: fogMaterial
-      value: 
-      objectReference: {fileID: 2100000, guid: 1b49d7c37051497fab599b821feff5e0, type: 2}
-    - target: {fileID: 3544602080672108148, guid: 085551d1f3c9f63c093ca3c25c80c740, type: 3}
-      propertyPath: skyboxMaterial
-      value: 
-      objectReference: {fileID: 2100000, guid: d291ca0ac84425a809917912e212f926, type: 2}
-    - target: {fileID: 3544602080672108148, guid: 085551d1f3c9f63c093ca3c25c80c740, type: 3}
       propertyPath: sunlightObject
       value: 
       objectReference: {fileID: 1827195349}
-    - target: {fileID: 3544602080672108148, guid: 085551d1f3c9f63c093ca3c25c80c740, type: 3}
-      propertyPath: missionOriginPrefab
-      value: 
-      objectReference: {fileID: 3620730582183390204, guid: 32435a41f104cc31794b905d801d16b5, type: 3}
-    - target: {fileID: 3544602080672108148, guid: 085551d1f3c9f63c093ca3c25c80c740, type: 3}
-      propertyPath: robotPrefab_GenericSpace
-      value: 
-      objectReference: {fileID: 316876391518084241, guid: c185964c99f809fcc957e47de637a30f, type: 3}
-    - target: {fileID: 3544602080672108148, guid: 085551d1f3c9f63c093ca3c25c80c740, type: 3}
-      propertyPath: robotPrefab_GenericWheeled
-      value: 
-      objectReference: {fileID: 8493869189743019094, guid: a4e64a372e34d849ab45327e98fb2c3d, type: 3}
     - target: {fileID: 3544602080672108149, guid: 085551d1f3c9f63c093ca3c25c80c740, type: 3}
       propertyPath: m_Name
       value: WORLD_MANAGER

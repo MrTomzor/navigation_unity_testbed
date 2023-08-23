@@ -1,4 +1,4 @@
-world_name: "station"
+world_name: "forest1" # [station, forest1]
 
 session_seed: 42
 
@@ -6,13 +6,13 @@ reload_scene: true
 respawn_random_objects: true
 
 robot_type: "generic_space"
-spawn_area: "courtyard"
+spawn_area: "center"
 spawn_point_number: 2
 
 global_light_cycle_enabled: false
 global_light_cycle_start: 4
 global_light_cycle_seconds: 8
-global_light_cycle_min_light: 0.8
+global_light_cycle_min_light: 1.1
 global_light_cycle_max_light: 1.2
 global_light_pitch: 10
 global_light_yaw: 45
