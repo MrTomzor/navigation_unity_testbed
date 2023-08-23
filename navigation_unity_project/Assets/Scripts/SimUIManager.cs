@@ -29,6 +29,9 @@ public class SimUIManager : MonoBehaviour
       rtfNextMeasure = Time.realtimeSinceStartup + rtfMeasurePeriod;
       rtfLastClocktime = Clock.time;
       texture = new RenderTexture (800, 480, 24);
+
+      debugCameraOn = false;
+      debugCamera.SetActive(false);
     }
 
     void RefreshText(){

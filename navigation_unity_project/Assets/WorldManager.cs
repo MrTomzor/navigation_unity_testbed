@@ -454,6 +454,12 @@ scene_modify_flag  = true;
         else{
           Debug.Log("WARN! no world origin tf publisher!");
         }
+
+        /* ALSO ADD THE CAMERA AND ROBOT LINK TO THE SIM UI MANAGER */
+        var simmanager = GetComponent<SimUIManager>();
+        simmanager.controlledRobot = robotObject;
+        simmanager.debugCamera = GameObject.FindGameObjectsWithTag("DebugCamera")[0];
+
         return true;
       }
     }

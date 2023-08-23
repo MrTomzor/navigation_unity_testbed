@@ -10,13 +10,13 @@ GameObject:
   m_Component:
   - component: {fileID: 349779021}
   - component: {fileID: 349779022}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &349779021
 Transform:
   m_ObjectHideFlags: 0
@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 349779020}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.1, z: 3.7}
+  m_LocalPosition: {x: 0, y: -1.1, z: 2.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -45,7 +45,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 2
-  m_Range: 30
+  m_Range: 50
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -104,7 +104,7 @@ GameObject:
   m_Component:
   - component: {fileID: 369136348}
   - component: {fileID: 369136349}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Spot Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -201,13 +201,13 @@ GameObject:
   - component: {fileID: 316876391110351689}
   - component: {fileID: 316876391110351688}
   - component: {fileID: 904936643}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: 'Main Camera '
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &316876391110351691
 Transform:
   m_ObjectHideFlags: 0
@@ -374,9 +374,9 @@ GameObject:
   - component: {fileID: 316876391518084250}
   - component: {fileID: 316876391518084253}
   - component: {fileID: 534441944}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: UnderwaterRobotPrefab
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -546,7 +546,7 @@ GameObject:
   - component: {fileID: 316876392429551050}
   - component: {fileID: 316876392429551053}
   - component: {fileID: 316876392429551052}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -643,7 +643,7 @@ GameObject:
   - component: {fileID: 316876392609467800}
   - component: {fileID: 316876392609467803}
   - component: {fileID: 1808744529}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: Debug Camera
   m_TagString: DebugCamera
   m_Icon: {fileID: 0}
@@ -658,7 +658,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 316876392609467805}
   m_LocalRotation: {x: 0.04614021, y: -0, z: -0, w: 0.998935}
-  m_LocalPosition: {x: 0, y: 1.894, z: -3.978}
+  m_LocalPosition: {x: 0, y: -0.19999981, z: 0.9999969}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
