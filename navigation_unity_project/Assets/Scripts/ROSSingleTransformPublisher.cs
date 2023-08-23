@@ -17,12 +17,9 @@ public class ROSSingleTransformPublisher: MonoBehaviour
     double m_PublishRateHz = 20f;
     [SerializeField]
     /* List<string> m_GlobalFrameIds = new List<string> { "map", "odom" }; */
-    public string orig_frame;
-    public string second_object_frame;
-    public GameObject second_object;
-
-    [SerializeField]
-    GameObject m_RootGameObject;
+    public string origFrame;
+    public string secondObjectFrame;
+    public GameObject secondObject;
     
     double m_LastPublishTimeSeconds;
 
@@ -35,11 +32,6 @@ public class ROSSingleTransformPublisher: MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (m_RootGameObject == null)
-        {
-            Debug.LogWarning($"No GameObject explicitly defined as {nameof(m_RootGameObject)}, so using {name} as root.");
-            m_RootGameObject = gameObject;
-        }
 
         m_ROS = ROSConnection.GetOrCreateInstance();
         m_ROS.RegisterPublisher<TFMessageMsg>(k_TfTopic);
@@ -91,11 +83,11 @@ public class ROSSingleTransformPublisher: MonoBehaviour
         uint nanosec = (uint)( (time - sec)*1e+9 );
         header.stamp.sec = sec;
         header.stamp.nanosec = nanosec;
-        header.frame_id = orig_frame;
+        header.frame_id = origFrame;
 
         var transformmsg = new TransformStampedMsg(header, 
-            second_object_frame, 
-            second_object.transform.ToROSTransform());
+            secondObjectFrame, 
+            secondObject.transform.ToROSTransform());
 
         tfMessageList.Add(transformmsg);
 

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEditor;
 
 using Unity.Robotics.ROSTCPConnector;
 using Unity.Robotics.ROSTCPConnector.ROSGeometry;
@@ -41,6 +42,7 @@ public class WorldManager : MonoBehaviour
   public string robotType = "generic_wheeled";
   public GameObject robotPrefab_GenericWheeled;
   public GameObject robotPrefab_GenericSpace;
+  public GameObject missionOriginPrefab;
 
   public string trialType = "explore+kidnap+home"; // or guidedexplore+kidnap+gotox or guidedexplore+kidnap+gotox+gotox or explore+detectchanges
   /* SPECIFIC SETTINGS FOR EXPLOREKIDNAPHOME */
@@ -402,7 +404,7 @@ scene_modify_flag  = true;
 
   bool spawnRobot(string zonename, int spawnpoint_index){
     /* FIND ALL EXISTING ROBOTS AND SPAWNPOINT ORIGIN AND REMOVE */
-    var last_spawnpoint_tf_object = GameObject.Find("LAST_SPAWNPOINT_TF_ORIGIN");
+    var last_spawnpoint_tf_object = GameObject.Find("MISSION_ORIGIN_TF");
     if(last_spawnpoint_tf_object != null){
       Destroy(last_spawnpoint_tf_object);
     }
@@ -432,10 +434,26 @@ scene_modify_flag  = true;
       if(area.areaName == zonename){
         Debug.Log("found spawn area, spawning");
 
-        GameObject spawnedObject = Instantiate(usedPrefab);
+        /* SPAWN ROBOT */
+        GameObject robotObject = PrefabUtility.InstantiatePrefab(usedPrefab) as GameObject;
         var sptr = area.getSpawnpointTransform(spawnpoint_index);
-        spawnedObject.transform.position = sptr.position;
-        spawnedObject.transform.rotation = sptr.rotation;
+        robotObject.transform.position = sptr.position;
+        robotObject.transform.rotation = sptr.rotation;
+
+        /* ALSO SPAWN TF PUBLISHER AT MISSION START POSE */
+        GameObject tfObject = PrefabUtility.InstantiatePrefab(missionOriginPrefab) as GameObject;
+        tfObject.transform.position = sptr.position;
+        tfObject.transform.rotation = sptr.rotation;
+        tfObject.GetComponent<ROSSingleTransformPublisher>().secondObject = robotObject;
+
+        /* ALSO SET THE TARGET OBJECT FOR WORLD TRANSFORM PUBLISHER */
+        var world_origin_pub = GameObject.Find("WORLD_ORIGIN_TF");
+        if(world_origin_pub != null){
+          world_origin_pub.GetComponent<ROSSingleTransformPublisher>().secondObject = robotObject;
+        }
+        else{
+          Debug.Log("WARN! no world origin tf publisher!");
+        }
         return true;
       }
     }
