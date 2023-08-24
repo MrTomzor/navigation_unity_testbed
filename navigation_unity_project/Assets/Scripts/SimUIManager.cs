@@ -32,6 +32,17 @@ public class SimUIManager : MonoBehaviour
       rtfNextMeasure = Time.realtimeSinceStartup + rtfMeasurePeriod;
       rtfLastClocktime = Clock.time;
       texture = new RenderTexture (800, 480, 24);
+
+      if(debugCamera == null){
+        var res = GameObject.FindGameObjectsWithTag("DebugCamera");
+        if(res.Length > 0){
+          debugCamera = res[0];
+        }
+      }
+      if(debugCamera != null){
+        debugCamera.SetActive(false);
+        debugCameraOn = false;
+      }
     }
 
     void RefreshText(){

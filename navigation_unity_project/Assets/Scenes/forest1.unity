@@ -5410,7 +5410,7 @@ WindZone:
   m_Enabled: 1
   m_Mode: 0
   m_Radius: 200
-  m_WindMain: 3
+  m_WindMain: 2
   m_WindTurbulence: 2
   m_WindPulseMagnitude: 0.5
   m_WindPulseFrequency: 0.01
@@ -8234,6 +8234,18 @@ PrefabInstance:
     - target: {fileID: 71942639975425424, guid: abecd8c3be0504e44a5dc59a32d36121, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -18.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 71942640715494059, guid: abecd8c3be0504e44a5dc59a32d36121, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 28.35757
+      objectReference: {fileID: 0}
+    - target: {fileID: 71942640715494059, guid: abecd8c3be0504e44a5dc59a32d36121, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 28.35757
+      objectReference: {fileID: 0}
+    - target: {fileID: 71942640715494059, guid: abecd8c3be0504e44a5dc59a32d36121, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 28.35757
       objectReference: {fileID: 0}
     - target: {fileID: 71942640802531595, guid: abecd8c3be0504e44a5dc59a32d36121, type: 3}
       propertyPath: m_Name
