@@ -27,7 +27,18 @@ The world is, after running the game, in some default state (e.g. clouds, positi
 To play around with changing the world settings, you can run the "session_cycler.py" node for showcasing changes of 4 world states, as shown in the video above, or run "place_recognition_from_motion_trial.py" for an example of how an active place recognition trial could work (you can test it on willing human subjects - tell them to try recognizing which area they are spawned in!). You can use these as examples to design your own experiments for developing and benchmarking robust vision-based spatial intelligence methods :)
 
 ## State of the project
-IN PROGRESS, ETA 8/24/2023
+### Sensors and robot models
+Available:
+- IMU sensor with gaussian noise, any number of monocular cameras with their camera_info published automatically (by default there is 1 camera on each robot, to add more, you for now have to edit the Unity project), "perfect odometry" for debugging and evaluating methods (a transform is published between the robot and its last spawnpoint, and also between the robot and the world coodinate frame origin). There are 2 available robots - "generic_wheeled" robot with wheels and a car-like controller, and a "generic_space" robot which is fully velocity/force controlled and has gravity disabled.
+  
+In progress:
+- URDF robot importing, depth camera, ultrasound rangefinder
+
+### Challenges for robustness
+TODO - add img from paper
+
+### Known issues
+- There is some issue with post-processing when doing manual render calls, in which the output ROS image is blurred too much, if the camera component is not active. However, if it is active, Unity seems to also render the camera on its own along with the manual render calls. Therefore, post-processing is now disabled for the ROS image data.
 
 ## Builds
 The first, experimental build, is in the "/release_build" folder. On startup, it will load up a "generic_space" robot with a monocular camera in the "forest1" scene. To change the scenes, modify the config file "ros_packages/navigation_unity_core/unity_world_config/default.yaml" and then apply it by running "rosrun navigation_unity_core default_world_loader.py". Any feedback is welcome!
