@@ -35,7 +35,8 @@ In progress:
 - URDF robot importing, depth camera, ultrasound rangefinder
 
 ### Challenges for robustness
-TODO - add img from paper
+The ones in normal text are available, the ones in italics are planned:
+![Alt text](media/challenges.png)
 
 ### Known issues
 - There is some issue with post-processing when doing manual render calls, in which the output ROS image is blurred too much, if the camera component is not active. However, if it is active, Unity seems to also render the camera on its own along with the manual render calls. Therefore, post-processing is now disabled for the ROS image data.
