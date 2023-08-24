@@ -1,5 +1,5 @@
 ## HARDNAV - Introduction
-Hi! Thank you for showing interest in our simulator! The full work-in-progress publication name is "HARDNAV - Simulator for Benchmarking Robust Navigation and Place Recognition in Large, Confusing and Highly Dynamic Environments". We hope this simulator can help you quickly test your perception and spatial intelligence methods against the extreme conditions that occur in the real world before doing costly real world experiments. Any feedback is greatly appreciated! This is still a work-in-progress, so some things are bound to break. If you want a stabler experience, please come back in a few weeks. If you want to dig around in this now, then great! The simulator is mostly built thanks to the Unity-Robotics-Hub (https://github.com/Unity-Technologies/Unity-Robotics-Hub) so that is worth checking out!
+Hi! Thank you for showing interest in our simulator! The full work-in-progress publication name is "HARDNAV - Simulator for Benchmarking Robust Navigation and Place Recognition in Large, Confusing and Highly Dynamic Environments". We hope this simulator can help you quickly test your robust perception and spatial intelligence methods against the varying, often extrem conditions that can occur in the real world before doing costly real world experiments. Any feedback is greatly appreciated! 
 
 Quick showcase of the simulator:
 
@@ -30,4 +30,4 @@ To play around with changing the world settings, you can run the "session_cycler
 IN PROGRESS, ETA 8/24/2023
 
 ## Builds
-IN PROGRESS, ETA 8/24/2023
+The first, experimental build, is in the "/release_build" folder. On startup, it will load up a "generic_space" robot with a monocular camera in the "forest1" scene. To change the scenes, modify the config file "ros_packages/navigation_unity_core/unity_world_config/default.yaml" and then apply it by running "rosrun navigation_unity_core default_world_loader.py". Any feedback is welcome!
