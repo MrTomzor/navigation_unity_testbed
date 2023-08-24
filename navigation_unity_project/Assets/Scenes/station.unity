@@ -2210,6 +2210,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 904936643, guid: c185964c99f809fcc957e47de637a30f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 316876391110351703, guid: c185964c99f809fcc957e47de637a30f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 316876391518084241, guid: c185964c99f809fcc957e47de637a30f, type: 3}
       propertyPath: m_Name
       value: UnderwaterRobotPrefab
@@ -2224,11 +2232,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 316876391518084255, guid: c185964c99f809fcc957e47de637a30f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.2
+      value: 10.36
       objectReference: {fileID: 0}
     - target: {fileID: 316876391518084255, guid: c185964c99f809fcc957e47de637a30f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 143
+      value: 143.11
       objectReference: {fileID: 0}
     - target: {fileID: 316876391518084255, guid: c185964c99f809fcc957e47de637a30f, type: 3}
       propertyPath: m_LocalRotation.w

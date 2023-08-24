@@ -435,13 +435,13 @@ scene_modify_flag  = true;
         Debug.Log("found spawn area, spawning");
 
         /* SPAWN ROBOT */
-        GameObject robotObject = PrefabUtility.InstantiatePrefab(usedPrefab) as GameObject;
+        GameObject robotObject = Instantiate(usedPrefab) as GameObject;
         var sptr = area.getSpawnpointTransform(spawnpoint_index);
         robotObject.transform.position = sptr.position;
         robotObject.transform.rotation = sptr.rotation;
 
         /* ALSO SPAWN TF PUBLISHER AT MISSION START POSE */
-        GameObject tfObject = PrefabUtility.InstantiatePrefab(missionOriginPrefab) as GameObject;
+        GameObject tfObject = Instantiate(missionOriginPrefab) as GameObject;
         tfObject.transform.position = sptr.position;
         tfObject.transform.rotation = sptr.rotation;
         tfObject.GetComponent<ROSSingleTransformPublisher>().secondObject = robotObject;
