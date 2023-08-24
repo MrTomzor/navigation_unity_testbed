@@ -10,7 +10,7 @@ Quick showcase of the simulator:
 ROS Dependencies:
 - [ROS-TCP-Endpoint ROS package](https://github.com/Unity-Technologies/ROS-TCP-Endpoint)
   
-Unity packages/assets (not needed if you use the executable, only if you want to play around with the simulator insides):
+Unity packages/assets (not needed if you use the executable, only if you want to edit the project in the Unity Editor, add your own features etc.):
 - [YamlDotNet](https://assetstore.unity.com/packages/tools/integration/yamldotnet-for-unity-36292) - needed for using YAML to reconfigure the world, project will not compile without it
 - [DreamForestTree](https://assetstore.unity.com/packages/3d/vegetation/trees/dream-forest-tree-105297) - contains trees, vegetation and ground textures used in Forest1 and ground texture for ScifiBase1. You might want to add colliders to the trees, as they dont have them by default in the package.
 - [Yughues Free Metal Materials](https://assetstore.unity.com/packages/2d/textures-materials/metals/yughues-free-metal-materials-12949) - very nice materials used for most objects in the simulator, and also for reflective and transparent walls
@@ -18,7 +18,7 @@ Unity packages/assets (not needed if you use the executable, only if you want to
 ## Getting started
 To use the HARDNAV simulator, there are two options:
 1) You can download one of the executable builds at the bottom of the readme,
-2) Or, to make modifications to the existing worlds, create new ones or add your own features into the worlds, you can download the Unity Hub from https://unity.com/download and open the "navigation_unity_project" folder as a Unity project.
+2) Or, to make modifications to the existing worlds, create new ones or add your own features into the worlds, you can download the Unity Hub from https://unity.com/download and open the "navigation_unity_project" folder as a Unity project. This will require importing the assets mentioned in the Dependencies section.
 
 For both of these options, the simulator connects to ROS automatically if there is a [ROS TCP Endpoint node](https://github.com/Unity-Technologies/ROS-TCP-Endpoint) running along with the Unity game, in which there is some ROS publisher/subscriber node. If the icon in the top left corner of the Unity game screen is blue, Unity is connected to ROS. For troubleshooting the ROS-Unity connection, please see the repo of the ROS-TCP-Endpoint.
 
