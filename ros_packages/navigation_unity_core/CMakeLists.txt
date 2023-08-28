@@ -164,6 +164,7 @@ catkin_install_python(PROGRAMS
   scripts/session_cycler.py
   scripts/default_world_loader.py
   scripts/place_recognition_from_motion_trial.py
+  scripts/return_home_trial.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
