@@ -25,6 +25,11 @@ namespace URP.Sensor
     public void Init()
     {
       this._camera  = GetComponent<Camera>();
+
+      /* this._width = _camera.pixelWidth; */
+      /* this._height = _camera.pixelHeight; */
+      _camera.pixelRect = new Rect(0, 0, this._width, this._height);
+
       this._texture = new Texture2D(this._width, this._height, TextureFormat.RGB24, false);
       this._rect = new Rect(0, 0, this._width, this._height);
       this._texture.Apply();
@@ -55,6 +60,8 @@ namespace URP.Sensor
       /* this.data = renderedTexture.EncodeToJPG(this._quality); */
 
       /* RenderTexture screenTexture = new RenderTexture(this._width, this._height, 24); */
+      /* cam.pixelRect = new Rect(0, 0, this._width, this._height); */
+      /* Debug.Log("CAMERA PIXELVALS: " + _camera.pixelWidth + ", " + _camera.pixelHeight); */
 
       var oldRec = cam.rect;
       cam.rect = new Rect(0f, 0f, 1f, 1f);

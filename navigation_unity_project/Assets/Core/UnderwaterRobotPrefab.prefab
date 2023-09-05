@@ -239,7 +239,7 @@ Camera:
   m_FOVAxisMode: 0
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
-  m_FocalLength: 50
+  m_FocalLength: 20
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -248,7 +248,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1500
-  field of view: 26.991467
+  field of view: 50
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -430,7 +430,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ref_topic_name: twist_velocity_control
-  motor_force: 10
+  motor_force: 5
   motor_torque: 2
   ground_raycast_len: 0.75
   ref_linear: {x: 0, y: 0, z: 0}
@@ -473,7 +473,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdd3a4316283ac3b791bd8030be031b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _topicName: imu/raw_data
+  _topicName: robot1/imu_raw
   _frameId: imu_link
   _message:
     orientation:
