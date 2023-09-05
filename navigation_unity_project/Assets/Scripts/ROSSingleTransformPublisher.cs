@@ -29,6 +29,8 @@ public class ROSSingleTransformPublisher: MonoBehaviour
 
     bool ShouldPublishMessage => Clock.NowTimeInSeconds > m_LastPublishTimeSeconds + PublishPeriodSeconds;
 
+    private GameObject follower;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +38,7 @@ public class ROSSingleTransformPublisher: MonoBehaviour
         m_ROS = ROSConnection.GetOrCreateInstance();
         m_ROS.RegisterPublisher<TFMessageMsg>(k_TfTopic);
         m_LastPublishTimeSeconds = Clock.time + PublishPeriodSeconds;
+        follower = transform.GetChild(0).gameObject;
     }
 
 
@@ -87,7 +90,7 @@ public class ROSSingleTransformPublisher: MonoBehaviour
 
         var transformmsg = new TransformStampedMsg(header, 
             secondObjectFrame, 
-            secondObject.transform.ToROSTransform());
+            follower.transform.ToROSTransform());
 
         tfMessageList.Add(transformmsg);
 
@@ -102,6 +105,8 @@ public class ROSSingleTransformPublisher: MonoBehaviour
     {
         if (ShouldPublishMessage)
         {
+            follower.transform.position = secondObject.transform.position;
+            follower.transform.rotation = secondObject.transform.rotation;
             PublishMessage();
         }
 
