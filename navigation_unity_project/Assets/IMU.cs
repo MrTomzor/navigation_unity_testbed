@@ -63,7 +63,7 @@ namespace URP.Sensor
             Vector3 acceleration = (localLinearVelocity - this._lastVelocity) / Time.fixedDeltaTime;
             this._lastVelocity = localLinearVelocity;
             // Add Gravity Element
-            acceleration += this._trans.InverseTransformDirection(Physics.gravity);
+            acceleration -= this._trans.InverseTransformDirection(Physics.gravity);
 
             // Update //
 

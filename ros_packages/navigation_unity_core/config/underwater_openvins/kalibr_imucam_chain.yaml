@@ -1,45 +1,16 @@
 %YAML:1.0
 
 cam0:
-  T_imu_cam: #rotation from camera to IMU R_CtoI, position of camera in IMU p_CinI
-    - [1, 0, 0, 0]
-    - [0, 1, 0, 0]
-    - [0, 0, 1, 0.5]
+  T_cam_imu:
+    - [0.0006893767284798236, -0.9999915386711482, 0.004055532743872103, -0.0012686898471298098]
+    - [-0.0015241632721680887, -0.004056579711190972, -0.9999906104996024, 0.00038841257567580556]
+    - [0.9999986008420447, 0.0006831889615195319, -0.0015269468873715109, 0.0005435027222983903]
     - [0.0, 0.0, 0.0, 1.0]
-  cam_overlaps: [0]
+  cam_overlaps: []
   camera_model: pinhole
-  # camera_model: plumb_bob
-  distortion_coeffs: [0,0,0,0]
-  distortion_model: equidistant
-  # intrinsics: [218.62328342963636,218.84544019573178, 374.186243114997, 203.57046644527676] #fu, fv, cu, cv
-  # intrinsics: [415, 415, 320, 240] #fu, fv, cu, cv
-  intrinsics: [643.3520818301457, 643.3520818301457, 400, 300] #fu, fv, cu, cv
+  distortion_coeffs: [-0.003585872109327331, 0.00826930983857347, 0.0003399593642056457, 0.00017512378497670848]
+  distortion_model: radtan
+  intrinsics: [642.8495341420769, 644.5958939934509, 400.0503960299562, 300.5824096896595]
   resolution: [800, 600]
-  # rostopic: /mv_25003659/image_raw
   rostopic: /robot1/camera1/raw
-# cam0:
-#   T_imu_cam: #rotation from camera to IMU R_CtoI, position of camera in IMU p_CinI
-#     - [0.0148655429818, -0.999880929698, 0.00414029679422, -0.0216401454975]
-#     - [0.999557249008, 0.0149672133247, 0.025715529948, -0.064676986768]
-#     - [-0.0257744366974, 0.00375618835797, 0.999660727178, 0.00981073058949]
-#     - [0.0, 0.0, 0.0, 1.0]
-#   cam_overlaps: [1]
-#   camera_model: pinhole
-#   distortion_coeffs: [-0.28340811, 0.07395907, 0.00019359, 1.76187114e-05]
-#   distortion_model: radtan
-#   intrinsics: [458.654, 457.296, 367.215, 248.375] #fu, fv, cu, cv
-#   resolution: [752, 480]
-#   rostopic: /cam0/image_raw
-# cam1:
-#   T_imu_cam: #rotation from camera to IMU R_CtoI, position of camera in IMU p_CinI
-#     - [0.0125552670891, -0.999755099723, 0.0182237714554, -0.0198435579556]
-#     - [0.999598781151, 0.0130119051815, 0.0251588363115, 0.0453689425024]
-#     - [-0.0253898008918, 0.0179005838253, 0.999517347078, 0.00786212447038]
-#     - [0.0, 0.0, 0.0, 1.0]
-#   cam_overlaps: [0]
-#   camera_model: pinhole
-#   distortion_coeffs: [-0.28368365,0.07451284,-0.00010473,-3.55590700e-05]
-#   distortion_model: radtan
-#   intrinsics: [457.587, 456.134, 379.999, 255.238] #fu, fv, cu, cv
-#   resolution: [752, 480]
-#   rostopic: /cam1/image_raw
+  timeshift_cam_imu: -2.0828573603060948e-05
