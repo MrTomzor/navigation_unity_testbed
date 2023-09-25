@@ -1,4 +1,4 @@
-world_name: "station"
+world_name: "forest1"
 
 session_seed: 42
 
@@ -9,13 +9,15 @@ robot_type: "generic_space"
 spawn_area: "corner2"
 spawn_point_number: 2
 
-global_light_cycle_enabled: false
+global_light_cycle_enabled: true
 global_light_cycle_start: 10
 global_light_cycle_seconds: 60
 global_light_cycle_min_light: 0.3
 global_light_cycle_max_light: 0.3
 global_light_pitch: 10
-global_light_yaw: 45
+global_light_yaw: 145
+
+wind_intensity: 1.2
 
 global_directional_light_r: 10
 global_directional_light_g: 10

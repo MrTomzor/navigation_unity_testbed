@@ -1,4 +1,4 @@
-world_name: "station"
+world_name: "forest1"
 
 session_seed: 42
 
@@ -16,6 +16,8 @@ global_light_cycle_min_light: 0.6
 global_light_cycle_max_light: 0.8
 global_light_pitch: 35
 global_light_yaw: -45
+
+wind_intensity: 0
 
 global_directional_light_r: 10
 global_directional_light_g: 10

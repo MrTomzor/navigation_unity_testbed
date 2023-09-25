@@ -190,6 +190,19 @@ public class WorldManager : MonoBehaviour
         RenderSettings.fogDensity = float.Parse(val);
       }
 
+      /* WIND */
+      else if(key == "wind_intensity"){
+        GameObject windobject = GameObject.Find("WIND");
+        if(windobject == null){
+          Debug.Log("WARN: NO WIND OBJECT! Can't change wind intensity");
+        }
+        else{
+          var wz = windobject.GetComponent<WindZone>();
+          wz.windMain = float.Parse(val);
+          /* windobject.GetComponent("WindZone"); */
+        }
+      }
+
       /* CLOUDS AND PARTICLES */
       else if(key == "clouds_enabled"){
         /* RenderSettings.fogDensity = float.Parse(val); */
