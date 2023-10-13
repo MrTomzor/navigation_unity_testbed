@@ -1,5 +1,5 @@
 ## HARDNAV - Introduction
-Hi! Thank you for showing interest in our simulator! The full work-in-progress publication name is "HARDNAV - Simulator for Benchmarking Robust Navigation and Place Recognition in Large, Confusing and Highly Dynamic Environments". We hope this simulator can help you quickly test your robust perception and spatial intelligence methods against the varying, often extrem conditions that can occur in the real world before doing costly real world experiments. Any feedback is greatly appreciated! 
+Hi! Thank you for showing interest in our simulator! The full name of the (currently) workshop paper is [**"HARDNAV - Simulator for Benchmarking Robust Navigation and Place Recognition in Large, Confusing and Highly Dynamic Environments"**](https://drive.google.com/drive/folders/1P0P6gtV69hoTc37NbpVFxB2imXVYpxip). We hope this simulator can help you quickly test your robust perception and spatial intelligence methods against the varying, often extreme conditions that can occur in the real world before doing costly real world experiments. **Any feedback is greatly appreciated!** Please send any issues or ideas for improvements to musilto8@fel.cvut.cz
 
 Quick showcase of the simulator:
 
@@ -42,14 +42,14 @@ To play around with changing the world settings, you can run the "session_cycler
 ## State of the project
 ### Sensors and robot models
 Available:
-- IMUROSPublisher.cs script for turning any GameObject with a Rigidbody intu an IMU sensor with gaussian noise,
-- RGBCameraROSPublisher.cs script for turning any camera in Unity into a camera that publishes data into ROS,
-- ROSSIngleTransformPublisher.cs script for publishing ground-truth pose for debugging and evaluating methods (a transform is published between the robot and its last spawnpoint, and also between the robot and the world coodinate frame origin).
-- 2 available simplified robots - "generic_wheeled" robot with wheels and a car-like controller, and a "generic_space" (also called underwater in the project) robot which is fully velocity/force controlled and has gravity disabled.
-- URDF importing of other robots is possible through the [URDF-Importer](https://github.com/Unity-Technologies/URDF-Importer) package, but is untested as of now. If the 
+- IMUROSPublisher.cs script for turning any GameObject with a Rigidbody intu an IMU sensor with gaussian noise
+- RGBCameraROSPublisher.cs script for turning any camera in Unity into a camera that publishes data into ROS
+- ROSSIngleTransformPublisher.cs script for publishing ground-truth pose for debugging and evaluating methods (a transform is published between the robot and its last spawnpoint, and also between the robot and the world coodinate frame origin)
+- 2 available simplified robots - "generic_wheeled" robot with wheels and a car-like controller, and a "generic_space" (also called underwater in the project) robot which is fully velocity/force controlled (through Twist messages) and has gravity disabled
+- URDF importing of other robots is possible through the [URDF-Importer](https://github.com/Unity-Technologies/URDF-Importer) package, but is untested as of now.
   
 In progress:
-- depth cameras, ultrasound rangefinder
+- depth cameras, ultrasound rangefinder, fixing generic_wheeled robot ROS control
 ### Coming soon
 - Adding a replicable benchmark of robust vision-based navigation, as proposed in the [workshop paper](https://drive.google.com/drive/folders/1P0P6gtV69hoTc37NbpVFxB2imXVYpxip) - Expected towards the end of October 2023.
 - Procedural generation of forest / alien planet environments - Expected November 2023.
