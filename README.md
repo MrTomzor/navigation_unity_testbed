@@ -42,13 +42,21 @@ To play around with changing the world settings, you can run the "session_cycler
 ## State of the project
 ### Sensors and robot models
 Available:
-- IMU sensor with gaussian noise, any number of monocular cameras with their camera_info published automatically (by default there is 1 camera on each robot, to add more, you for now have to edit the Unity project), "perfect odometry" for debugging and evaluating methods (a transform is published between the robot and its last spawnpoint, and also between the robot and the world coodinate frame origin). There are 2 available robots - "generic_wheeled" robot with wheels and a car-like controller, and a "generic_space" robot which is fully velocity/force controlled and has gravity disabled.
+- IMUROSPublisher.cs script for turning any GameObject with a Rigidbody intu an IMU sensor with gaussian noise,
+- RGBCameraROSPublisher.cs script for turning any camera in Unity into a camera that publishes data into ROS,
+- ROSSIngleTransformPublisher.cs script for publishing ground-truth pose for debugging and evaluating methods (a transform is published between the robot and its last spawnpoint, and also between the robot and the world coodinate frame origin).
+- 2 available simplified robots - "generic_wheeled" robot with wheels and a car-like controller, and a "generic_space" (also called underwater in the project) robot which is fully velocity/force controlled and has gravity disabled.
+- URDF importing of other robots is possible through the [URDF-Importer](https://github.com/Unity-Technologies/URDF-Importer) package, but is untested as of now. If the 
   
 In progress:
-- URDF robot importing, depth camera, ultrasound rangefinder
+- depth cameras, ultrasound rangefinder
+### Coming soon
+- Adding a replicable benchmark of robust vision-based navigation, as proposed in the [workshop paper](https://drive.google.com/drive/folders/1P0P6gtV69hoTc37NbpVFxB2imXVYpxip) - Expected towards the end of October 2023.
+- Procedural generation of forest / alien planet environments - Expected November 2023.
+- Comparison of state-of-the-art SLAM and visual place recognition algorithms on the simulated extreme conditions - Expected December 2023
 
 ### Challenges for robustness
-The ones in normal text are available, the ones in italics are planned:
+The ones in normal text are available through the simulator in some way, the ones in italics are planned:
 ![Alt text](media/challenges.png)
 
 ### Known issues
