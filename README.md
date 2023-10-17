@@ -60,7 +60,7 @@ The ones in normal text are available through the simulator in some way, the one
 ![Alt text](media/challenges.png)
 
 ### Known issues
-- There is some issue with post-processing when doing manual render calls, in which the output ROS image is blurred too much, if the camera component is not active. However, if it is active, Unity seems to also render the camera on its own along with the manual render calls. Therefore, post-processing is now disabled for the ROS image data.
+- There is some issue with post-processing motion blur when doing manual render calls, in which the output ROS image is blurred too much, if the camera component is not active. However, if it is active, Unity seems to also render the camera on its own along with the manual render calls. Therefore, motion blur is now disabled for the ROS image data. Bloom works.
 - Large difference between realtime factor when running the game in the Editor and when running the built version (getting RTF of ~1.0 in the forest when the debug camera is disabled in Editor,but in the build, the RTF does not improve when debug cam is disabled in the built game and stays around 0.6 on a standard laptop). It's likely a problem with some project settings and timestep configuration.
 
 ## Builds
