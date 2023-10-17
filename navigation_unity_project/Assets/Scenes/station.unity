@@ -2998,7 +2998,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a69ef85d12c0b3e1bb7744341b0809dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultNumObjectsToSpawn: 40
+  defaultNumObjectsToSpawn: 30
   numerosity: 1
   surface: {fileID: 0}
   repeatPeriod: 0.1
