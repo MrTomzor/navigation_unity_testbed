@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.5
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0033140655, g: 0.003111687, b: 0.0030506372, a: 0.5}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 0.5}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2212,7 +2212,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 904936643, guid: c185964c99f809fcc957e47de637a30f, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 316876391110351690, guid: c185964c99f809fcc957e47de637a30f, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 316876391110351703, guid: c185964c99f809fcc957e47de637a30f, type: 3}
       propertyPath: m_Enabled
@@ -2221,6 +2225,10 @@ PrefabInstance:
     - target: {fileID: 316876391518084241, guid: c185964c99f809fcc957e47de637a30f, type: 3}
       propertyPath: m_Name
       value: UnderwaterRobotPrefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 316876391518084252, guid: c185964c99f809fcc957e47de637a30f, type: 3}
+      propertyPath: motor_force
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 316876391518084255, guid: c185964c99f809fcc957e47de637a30f, type: 3}
       propertyPath: m_RootOrder
@@ -2990,7 +2998,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a69ef85d12c0b3e1bb7744341b0809dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultNumObjectsToSpawn: 30
+  defaultNumObjectsToSpawn: 40
   numerosity: 1
   surface: {fileID: 0}
   repeatPeriod: 0.1
@@ -8467,7 +8475,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5445191485731771091, guid: 658f164dbdbf94c8f8f0f5cea28474e3, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5445191485731771092, guid: 658f164dbdbf94c8f8f0f5cea28474e3, type: 3}
       propertyPath: m_ReceiveShadows
