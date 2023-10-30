@@ -53,19 +53,15 @@ MonoBehaviour:
   timeElapsed: 0
   task: explore
   robotType: car
-  robotPrefab_GenericWheeled: {fileID: 8493869189743019094, guid: a4e64a372e34d849ab45327e98fb2c3d, type: 3}
+  robotPrefab_Jackal: {fileID: 2068798152515256585, guid: d189070ae37647280892854a5f7b26a1, type: 3}
   robotPrefab_GenericSpace: {fileID: 316876391518084241, guid: c185964c99f809fcc957e47de637a30f, type: 3}
   missionOriginPrefab: {fileID: 3620730582183390204, guid: 32435a41f104cc31794b905d801d16b5, type: 3}
-  trialType: explore+kidnap+home
-  exploreTime: 1200
-  homingTimeMultiplier: 1.5
-  kidnapTimes: 10
   taskMaxTime: 60
   taskElapsedTime: 0
   simpleRandomizationGroups: []
   robotGameObject: {fileID: 0}
   sessionSeed: 0
-  enableDayNightSimulation: 1
+  enableDayNightSimulation: 0
   enableDayNightColorChange: 0
   sunlightObject: {fileID: 0}
   dayNightCycleSeconds: 120
@@ -100,9 +96,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f73c26c6488aade2ac221f79c70cba7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  manualControlOn: 1
-  debugCameraOn: 0
   controlledRobot: {fileID: 0}
   debugCamera: {fileID: 0}
-  mainStatsBackground: {fileID: 0}
-  mainStatsText: {fileID: 0}

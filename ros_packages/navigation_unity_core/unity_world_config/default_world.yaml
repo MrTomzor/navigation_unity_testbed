@@ -14,7 +14,7 @@ global_light_cycle_start: 4
 global_light_cycle_seconds: 8
 global_light_cycle_min_light: 1.1
 global_light_cycle_max_light: 1.2
-global_light_pitch: 10
+global_light_pitch: 30
 global_light_yaw: 45
 
 wind_intensity: 4
