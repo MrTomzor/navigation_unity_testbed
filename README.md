@@ -51,7 +51,8 @@ Available:
 In progress:
 - depth cameras, ultrasound rangefinder, fixing generic_wheeled robot ROS control
 ### Coming soon
-- Adding a replicable benchmark of robust vision-based navigation, as proposed in the [workshop paper](https://drive.google.com/drive/folders/1P0P6gtV69hoTc37NbpVFxB2imXVYpxip) - Expected towards the end of October 2023.
+- Importing the Jackal ground robot with the Unity URDF importer and a tutorial on importing additional robots - Expected towards the end of October 2023.
+- Adding a replicable benchmark of robust vision-based navigation, as proposed in the [workshop paper](https://drive.google.com/drive/folders/1P0P6gtV69hoTc37NbpVFxB2imXVYpxip) - Expected towards the end of November 2023.
 - Procedural generation of forest / alien planet environments - Expected November 2023.
 - Comparison of state-of-the-art SLAM and visual place recognition algorithms on the simulated extreme conditions - Expected December 2023
 
