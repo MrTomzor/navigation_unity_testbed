@@ -82,7 +82,7 @@ public class SimUIManager : MonoBehaviour
 
       if(Input.GetKeyDown("m")){
         manualControlOn = !manualControlOn;
-        controlledRobot.SendMessage("ToggleManualControl", manualControlOn);
+        controlledRobot.BroadcastMessage("ToggleManualControl", manualControlOn);
       }
 
       double realtime = Time.realtimeSinceStartup;

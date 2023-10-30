@@ -522,6 +522,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 705507993}
     - target: {fileID: 3544602080672108148, guid: 085551d1f3c9f63c093ca3c25c80c740, type: 3}
+      propertyPath: robotPrefab_Jackal
+      value: 
+      objectReference: {fileID: 2068798152515256585, guid: d189070ae37647280892854a5f7b26a1, type: 3}
+    - target: {fileID: 3544602080672108148, guid: 085551d1f3c9f63c093ca3c25c80c740, type: 3}
       propertyPath: enableDayNightSimulation
       value: 0
       objectReference: {fileID: 0}
@@ -5350,8 +5354,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ref_topic_name: twist
-  motor_force: 1
-  motor_torque: 0.1
+  linear_control_p: 10
+  linear_control_i: 1
+  angular_control_p: 10
+  angular_control_i: 1
   ground_raycast_len: 0.75
   ref_linear: {x: 0, y: 0, z: 0}
   ref_rotation: {x: 0, y: 0, z: 0}
@@ -5359,6 +5365,10 @@ MonoBehaviour:
   mouseSensitivity: 1
   linearGameControlSensitivity: 10
   velocityControl: 0
+  carMode: 0
+  angvel_error_integral: {x: 0, y: 0, z: 0}
+  linear_error_integral: {x: 0, y: 0, z: 0}
+  integration_cutoff: 3
 --- !u!114 &1475264245
 MonoBehaviour:
   m_ObjectHideFlags: 0

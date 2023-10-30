@@ -39,18 +39,10 @@ public class WorldManager : MonoBehaviour
   public int level;
   public double timeElapsed;
   public string task = "explore";
-  public string robotType = "generic_wheeled";
-  public GameObject robotPrefab_GenericWheeled;
+  public string robotType = "jackal";
+  public GameObject robotPrefab_Jackal;
   public GameObject robotPrefab_GenericSpace;
   public GameObject missionOriginPrefab;
-
-  public string trialType = "explore+kidnap+home"; // or guidedexplore+kidnap+gotox or guidedexplore+kidnap+gotox+gotox or explore+detectchanges
-  /* SPECIFIC SETTINGS FOR EXPLOREKIDNAPHOME */
-  public double exploreTime = 1200;
-  public double homingTimeMultiplier = 1.5; //multiplies the lenght of the path on the mesh
-  // or fuel?
-  public int kidnapTimes = 10;
-
 
   public double taskMaxTime = 60;
   public double taskElapsedTime = 0;
@@ -346,7 +338,7 @@ public class WorldManager : MonoBehaviour
     robotAwake = true;
 
     /* SEND MSG TO WAKE UP ROBOT */
-    sendRobotSleepState();
+    /* sendRobotSleepState(); */
   }
 
   ResetWorldResponse handleWorldResetRequest(ResetWorldRequest req){
@@ -428,8 +420,8 @@ scene_modify_flag  = true;
 
     /* CHOOSE ROBOT TYPE */
     GameObject usedPrefab;
-    if(robotType == "generic_wheeled"){
-      usedPrefab = robotPrefab_GenericWheeled;
+    if(robotType == "jackal"){
+      usedPrefab = robotPrefab_Jackal;
     }
     else if(robotType == "generic_space"){
       usedPrefab = robotPrefab_GenericSpace;
@@ -517,13 +509,12 @@ scene_modify_flag  = true;
 
 
     /* PERIODICALLY SEND SLEEPSTATE AND TASKDEF */
-    sleepstateElapsedTime += Time.deltaTime;
-    if(sleepstateElapsedTime > 1f/sleepstateSendRate){
-      /* Debug.Log("sending robot sleep state"); */
-      sleepstateElapsedTime -= 1f/sleepstateSendRate;
-      sendRobotSleepState();
-      sendCurrentTaskDefinition();
-    }
+    /* sleepstateElapsedTime += Time.deltaTime; */
+    /* if(sleepstateElapsedTime > 1f/sleepstateSendRate){ */
+    /*   /1* Debug.Log("sending robot sleep state"); *1/ */
+    /*   sleepstateElapsedTime -= 1f/sleepstateSendRate; */
+    /*   sendRobotSleepState(); */
+    /* } */
   }
 
   void bakeDayNightEffects(){
@@ -562,14 +553,6 @@ scene_modify_flag  = true;
       }
     }
 
-  }
-
-  void sendCurrentTaskDefinition(){
-    NavigationTaskDefinitionMsg msg = new NavigationTaskDefinitionMsg();
-    msg.task_type = task;
-    msg.task_seconds = (float)taskMaxTime;
-    msg.task_elapsed_seconds = (float)taskElapsedTime;
-    this._ros.Publish(this._taskdefTopicName, msg);
   }
 
   void sendRobotSleepState(){

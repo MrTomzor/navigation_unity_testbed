@@ -5,7 +5,7 @@ session_seed: 42
 reload_scene: false
 respawn_random_objects: true
 
-robot_type: "generic_space"
+robot_type: "generic_space" # generic_space = gravity-disabled floating camera and IMU, jackal = ClearPath robotics Jackal with Twist controller
 spawn_area: "center"
 spawn_point_number: 2
 

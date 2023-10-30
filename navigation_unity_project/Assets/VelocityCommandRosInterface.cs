@@ -10,8 +10,11 @@ public class VelocityCommandRosInterface : MonoBehaviour
 {
   public string ref_topic_name;
   /* public string encoder_topic_name; */
-  public float motor_force = 10;
-  public float motor_torque = 10;
+  public float linear_control_p = 10;
+  public float linear_control_i = 1;
+  public float angular_control_p = 10;
+  public float angular_control_i = 1;
+
   public float ground_raycast_len = .75f;
 
   public Vector3 ref_linear;
@@ -22,6 +25,11 @@ public class VelocityCommandRosInterface : MonoBehaviour
   public float linearGameControlSensitivity = 10;
 
   public bool velocityControl = true; //alternative is forcecontrol
+  public bool carMode = false;
+
+  public Vector3 angvel_error_integral;
+  public Vector3 linear_error_integral;
+  public float integration_cutoff = 3;
 
   void Start()
   {
@@ -45,32 +53,60 @@ public class VelocityCommandRosInterface : MonoBehaviour
       Screen.lockCursor = false;
     }
 
-    var rb = GetComponent<Rigidbody>();
+    Rigidbody rb = GetComponent<Rigidbody>();
+    ArticulationBody ab = GetComponent<ArticulationBody>();
+
     if(velocityControl){
       /* VEL CONTROL */
 
-      //Vector3 current_velocity = rb.velocity;
-      Vector3 current_velocity  = transform.InverseTransformDirection(rb.velocity);
-      float current_angular_velocity = rb.angularVelocity.y;
+      Vector3 current_velocity;
+      Vector3 current_angular_velocity;
 
-      /* float angvel_error = ref_rotation.z - current_angular_velocity; */
-      Vector3 angvel_error = ref_rotation - transform.InverseTransformDirection(rb.angularVelocity);
-      /* Vector3 angvel_error = ref_rotation - rb.angularVelocity; */
-
+      if(rb){
+        current_velocity  = transform.InverseTransformDirection(rb.velocity);
+        current_angular_velocity = transform.InverseTransformDirection(rb.angularVelocity);
+      }
+      else{
+        current_velocity  = transform.InverseTransformDirection(ab.velocity);
+        current_angular_velocity = transform.InverseTransformDirection(ab.angularVelocity);
+      }
+      
+      Vector3 angvel_error = ref_rotation - current_angular_velocity;
       Vector3 linear_error = ref_linear - current_velocity;
+      if(carMode){
+        angvel_error.x = 0;
+        angvel_error.z = 0;
+        linear_error.y = 0;
+        linear_error.x = 0;
+      }
 
-      //rb.AddTorque(transform.up * (float)(msg.twist.angular.z * motor_torque));
-      /* float torque = (float)(angvel_error * motor_torque); */
-      /* float torque = (float)(angvel_error.magnitude * motor_torque); */
-      /* rb.AddTorque(transform.up * torque); */
+      angvel_error_integral += angvel_error;
+      linear_error_integral += linear_error;
+      if(linear_error.magnitude > integration_cutoff){
+        // TODO - do it per element
+        linear_error = linear_error * (integration_cutoff / linear_error.magnitude);
+      }
+      if(angvel_error.magnitude > integration_cutoff){
+        // TODO - do it per element
+        angvel_error = angvel_error * (integration_cutoff / angvel_error.magnitude);
+      }
 
-      rb.AddTorque(transform.TransformDirection(angvel_error * motor_torque));
-      rb.AddForce(transform.TransformDirection(linear_error * motor_force));
+      if(rb){
+        rb.AddTorque(transform.TransformDirection(angvel_error * angular_control_p + angvel_error_integral * angular_control_i));
+        rb.AddForce(transform.TransformDirection(linear_error * linear_control_p + linear_error_integral * linear_control_i));
+      }
+      else{
+        ab.AddTorque(transform.TransformDirection(angvel_error * angular_control_p + angvel_error_integral * angular_control_i));
+        ab.AddForce(transform.TransformDirection(linear_error * linear_control_p + linear_error_integral * linear_control_i));
+      }
+      Debug.Log("CURRENT VELOCITY AND ANGVELOCITY:");
+      Debug.Log(current_velocity);
+      Debug.Log(current_angular_velocity);
     }
     else{
       /* FORCE CONTROL */
-      rb.AddTorque(transform.TransformDirection(ref_rotation * motor_torque));
-      rb.AddForce(transform.TransformDirection(ref_linear * motor_force));
+      rb.AddTorque(transform.TransformDirection(ref_rotation * linear_control_p));
+      rb.AddForce(transform.TransformDirection(ref_linear * angular_control_p));
     }
   }
 
@@ -80,9 +116,12 @@ public class VelocityCommandRosInterface : MonoBehaviour
     ref_linear.y = (float)msg.twist.linear.z;
     ref_linear.z = (float)msg.twist.linear.x;
 
-    ref_rotation.x = (float)msg.twist.angular.x;
-    ref_rotation.y = (float)msg.twist.angular.y;
-    ref_rotation.z = (float)msg.twist.angular.z;
+    /* ref_rotation.x = (float)msg.twist.angular.x; */
+    /* ref_rotation.y = (float)msg.twist.angular.y; */
+    /* ref_rotation.z = (float)msg.twist.angular.z; */
+    ref_rotation.x = -(float)msg.twist.angular.y;
+    ref_rotation.y = (float)msg.twist.angular.z;
+    ref_rotation.z = (float)msg.twist.angular.x;
   }
 
   public void ToggleManualControl(bool b){

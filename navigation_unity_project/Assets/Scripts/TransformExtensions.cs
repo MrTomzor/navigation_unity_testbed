@@ -13,4 +13,11 @@ public static class TransformExtensions
             tfUnity.localPosition.To<FLU>(),
             tfUnity.localRotation.To<FLU>());
     }
+    public static TransformMsg ToROSTransformGlobal(this Transform tfUnity)
+    {
+        return new TransformMsg(
+            // Using vector/quaternion To<>() because Transform.To<>() doesn't use localPosition/localRotation
+            tfUnity.position.To<FLU>(),
+            tfUnity.rotation.To<FLU>());
+    }
 }
