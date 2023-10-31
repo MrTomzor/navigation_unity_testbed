@@ -81,7 +81,7 @@ public class WorldManager : MonoBehaviour
   /* CLOUDS AND PARTICLES */
   private GameObject cloudsObject;
   public bool cloudsEnabled = true;
-  private GameObject[] rainObjects;
+  public GameObject[] rainObjects;
   public bool rainEnabled;
   public float cloudsDensity = 0.8f;
   public float cloudsBaseRate = 300;
@@ -256,6 +256,17 @@ public class WorldManager : MonoBehaviour
         rainEnabled = bool.Parse(val);
         foreach(GameObject o in rainObjects){
           o.SetActive(rainEnabled);
+          if(rainEnabled){
+            var robot_objects = GameObject.FindGameObjectsWithTag("robot");
+            if(robot_objects.Length > 0){
+              foreach(GameObject r in rainObjects){
+                r.GetComponent<PositionFollower>().target = robot_objects[0];
+              }
+            }
+            else{
+              Debug.Log("WARN! Cannot find robot object for the rain to follow!");
+            }
+          }
         }
       }
 
@@ -446,19 +457,19 @@ scene_modify_flag  = true;
         robotObject.transform.rotation = sptr.rotation;
 
         /* ALSO SPAWN TF PUBLISHER AT MISSION START POSE */
-        GameObject tfObject = Instantiate(missionOriginPrefab) as GameObject;
-        tfObject.transform.position = sptr.position;
-        tfObject.transform.rotation = sptr.rotation;
-        tfObject.GetComponent<ROSSingleTransformPublisher>().secondObject = robotObject;
+        /* GameObject tfObject = Instantiate(missionOriginPrefab) as GameObject; */
+        /* tfObject.transform.position = sptr.position; */
+        /* tfObject.transform.rotation = sptr.rotation; */
+        /* tfObject.GetComponent<ROSSingleTransformPublisher>().secondObject = robotObject; */
 
         /* ALSO SET THE TARGET OBJECT FOR WORLD TRANSFORM PUBLISHER */
-        var world_origin_pub = GameObject.Find("WORLD_ORIGIN_TF");
-        if(world_origin_pub != null){
-          world_origin_pub.GetComponent<ROSSingleTransformPublisher>().secondObject = robotObject;
-        }
-        else{
-          Debug.Log("WARN! no world origin tf publisher!");
-        }
+        /* var world_origin_pub = GameObject.Find("WORLD_ORIGIN_TF"); */
+        /* if(world_origin_pub != null){ */
+        /*   world_origin_pub.GetComponent<ROSSingleTransformPublisher>().secondObject = robotObject; */
+        /* } */
+        /* else{ */
+        /*   Debug.Log("WARN! no world origin tf publisher!"); */
+        /* } */
 
         /* ALSO ADD THE CAMERA AND ROBOT LINK TO THE SIM UI MANAGER */
         /* var simmanager = GetComponent<SimUIManager>(); */

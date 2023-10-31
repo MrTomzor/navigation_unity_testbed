@@ -5,15 +5,15 @@ session_seed: 42
 reload_scene: false
 respawn_random_objects: true
 
-robot_type: "generic_space" # generic_space = gravity-disabled floating camera and IMU, jackal = ClearPath robotics Jackal with Twist controller
-spawn_area: "center"
+robot_type: "jackal" # generic_space = gravity-disabled floating camera and IMU, jackal = ClearPath robotics Jackal with Twist controller
+spawn_area: "center" #example areas: forest1:center, station:courtyard
 spawn_point_number: 2
 
 global_light_cycle_enabled: true
 global_light_cycle_start: 4
 global_light_cycle_seconds: 8
-global_light_cycle_min_light: 1.1
-global_light_cycle_max_light: 1.2
+global_light_cycle_min_light: 1.5
+global_light_cycle_max_light: 1.7
 global_light_pitch: 30
 global_light_yaw: 45
 
@@ -33,7 +33,7 @@ skybox_b: 10
 
 clouds_enabled: true
 clouds_height: 300
-clouds_density: 0 # 0 = no clouds, 1 = full overcast
+clouds_density: 0.3 # 0 = no clouds, 1 = full overcast
 clouds_particle_scale: 1 # 1 = default, use e.g. 10 for low density of large particles
 clouds_brightness: 0.8 # 0 = black, 1 = white/color based on the gameobjects settings
 clouds_average_velocity_x: 100 #in meters per second in the x direction of Unitys coord system

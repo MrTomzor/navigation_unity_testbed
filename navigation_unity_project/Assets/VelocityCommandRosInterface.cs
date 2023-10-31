@@ -84,11 +84,11 @@ public class VelocityCommandRosInterface : MonoBehaviour
       linear_error_integral += linear_error;
       if(linear_error.magnitude > integration_cutoff){
         // TODO - do it per element
-        linear_error = linear_error * (integration_cutoff / linear_error.magnitude);
+        linear_error_integral = linear_error_integral * (integration_cutoff / linear_error.magnitude);
       }
-      if(angvel_error.magnitude > integration_cutoff){
+      if(angvel_error_integral.magnitude > integration_cutoff){
         // TODO - do it per element
-        angvel_error = angvel_error * (integration_cutoff / angvel_error.magnitude);
+        angvel_error_integral = angvel_error_integral * (integration_cutoff / angvel_error_integral.magnitude);
       }
 
       if(rb){

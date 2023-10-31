@@ -201,7 +201,7 @@ GameObject:
   - component: {fileID: 316876391110351689}
   - component: {fileID: 316876391110351688}
   - component: {fileID: 904936643}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: 'Main Camera '
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -307,7 +307,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 316876391110351690}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
   m_Name: 
@@ -430,8 +430,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ref_topic_name: twist_velocity_control
-  motor_force: 5
-  motor_torque: 2
+  linear_control_p: 5
+  linear_control_i: 0
+  angular_control_p: 5
+  angular_control_i: 0
   ground_raycast_len: 0.75
   ref_linear: {x: 0, y: 0, z: 0}
   ref_rotation: {x: 0, y: 0, z: 0}
@@ -439,6 +441,10 @@ MonoBehaviour:
   mouseSensitivity: 0.8
   linearGameControlSensitivity: 100
   velocityControl: 1
+  carMode: 0
+  angvel_error_integral: {x: 0, y: 0, z: 0}
+  linear_error_integral: {x: 0, y: 0, z: 0}
+  integration_cutoff: 3
 --- !u!114 &316876391518084250
 MonoBehaviour:
   m_ObjectHideFlags: 0
