@@ -70,7 +70,7 @@ public class WorldManager : MonoBehaviour
   public bool enableDynamicLightEffects = true;
 
   /* ROBOT SPAWNING */
-  private LabeledZoneStringPublisher[] spawnAreas;
+  public LabeledZoneStringPublisher[] spawnAreas;
 
   /* DYNAMIC OBJECTS */
   private NavAreaManager[] groundDynamicObjectSpawners;
@@ -105,6 +105,8 @@ public class WorldManager : MonoBehaviour
   /* private readonly ITestOutputHelper output; */
 
   void ModifyWorldFromStaticConfig(){
+    FindLinkedObjects();
+
     // Setup the input
     var input = new StringReader(world_config_string);
 
@@ -115,6 +117,45 @@ public class WorldManager : MonoBehaviour
     // Examine the stream
     var mapping =
       (YamlMappingNode)yaml.Documents[0].RootNode;
+
+    if(do_respawning_flag){
+      /* FIND WHAT TYPE OF ROBOT FIRST AND SPAWN IT SO U CAN CONNECT ALL FOLLOWERS TO THE ROBOT */
+      bool have_type = false;
+      bool have_area = false;
+      bool have_point = false;
+      foreach (var entry in mapping.Children)
+      {
+        /* output.WriteLine(((YamlScalarNode)entry.Key).Value); */
+        var key = ((YamlScalarNode)entry.Key).Value;
+        var val = ((YamlScalarNode)entry.Value).Value;
+
+        /* TODO move this to loading from string */
+        if(key == "robot_type"){
+          robotType = val;
+          have_type = true;
+
+        }
+        else if(key == "spawn_area"){
+          have_area = true;
+          spawn_area = (val);
+        }
+        else if(key == "spawn_point_number"){
+          have_point = true;
+          spawn_area_point_index = int.Parse(val);
+        }
+        if(have_type && have_area && have_point){
+          break;
+        }
+      }
+
+      if(have_type && have_area && have_point){
+        Debug.Log("all params for spawning robot found, spawning robot!");
+        spawnRobot(spawn_area, spawn_area_point_index);
+      }
+      else{
+        Debug.Log("ERROR! Did not get all params needed for spawning robot! (type, area, area spawn num)");
+      }
+    }
 
     foreach (var entry in mapping.Children)
     {
@@ -309,8 +350,6 @@ public class WorldManager : MonoBehaviour
     }
 
     if(do_respawning_flag){
-      Debug.Log("spawning robot");
-      spawnRobot(spawn_area, spawn_area_point_index);
       /* TODO respawn other shit too */
     }
 
@@ -328,12 +367,7 @@ public class WorldManager : MonoBehaviour
     this._ros.ImplementService<ResetWorldRequest, ResetWorldResponse>("/reset_world", handleWorldResetRequest);
 
     /* FIND STUFF */
-    groundDynamicObjectSpawners = (NavAreaManager[]) GameObject.FindObjectsOfType (typeof(NavAreaManager));
-    nongroundDynamicObjectSpawners = (FlyingObjectAreaManager[]) GameObject.FindObjectsOfType (typeof(FlyingObjectAreaManager));
-    simpleRandomizationGroups = (ChildrenSpawnRandomizer[]) GameObject.FindObjectsOfType (typeof(ChildrenSpawnRandomizer));
-    cloudsObject = GameObject.FindGameObjectsWithTag("Clouds")[0];
-    rainObjects = GameObject.FindGameObjectsWithTag("Rain");
-    spawnAreas = (LabeledZoneStringPublisher[]) GameObject.FindObjectsOfType (typeof(LabeledZoneStringPublisher));
+    FindLinkedObjects();
 
     {
       ParticleSystem ps = cloudsObject.GetComponent<ParticleSystem>();
@@ -350,6 +384,15 @@ public class WorldManager : MonoBehaviour
 
     /* SEND MSG TO WAKE UP ROBOT */
     /* sendRobotSleepState(); */
+  }
+
+  void FindLinkedObjects(){
+    groundDynamicObjectSpawners = (NavAreaManager[]) GameObject.FindObjectsOfType (typeof(NavAreaManager));
+    nongroundDynamicObjectSpawners = (FlyingObjectAreaManager[]) GameObject.FindObjectsOfType (typeof(FlyingObjectAreaManager));
+    simpleRandomizationGroups = (ChildrenSpawnRandomizer[]) GameObject.FindObjectsOfType (typeof(ChildrenSpawnRandomizer));
+    cloudsObject = GameObject.FindGameObjectsWithTag("Clouds")[0];
+    rainObjects = GameObject.FindGameObjectsWithTag("Rain");
+    spawnAreas = (LabeledZoneStringPublisher[]) GameObject.FindObjectsOfType (typeof(LabeledZoneStringPublisher));
   }
 
   ResetWorldResponse handleWorldResetRequest(ResetWorldRequest req){
@@ -424,6 +467,8 @@ scene_modify_flag  = true;
     if(last_spawnpoint_tf_object != null){
       Destroy(last_spawnpoint_tf_object);
     }
+
+    /* DESTROY ALL EXISTING ROBOTS */
     var existing_robots = GameObject.FindGameObjectsWithTag("Player");
     foreach(GameObject o in existing_robots){
       Destroy(o);
@@ -451,10 +496,12 @@ scene_modify_flag  = true;
         Debug.Log("found spawn area, spawning");
 
         /* SPAWN ROBOT */
-        GameObject robotObject = Instantiate(usedPrefab) as GameObject;
+        /* GameObject robotObject = Instantiate(usedPrefab) as GameObject; */
         var sptr = area.getSpawnpointTransform(spawnpoint_index);
-        robotObject.transform.position = sptr.position;
-        robotObject.transform.rotation = sptr.rotation;
+        /* robotObject.transform.position = sptr.position; */
+        /* robotObject.transform.rotation = sptr.rotation; */
+
+        GameObject robotObject = Instantiate(usedPrefab, sptr.transform.position, sptr.transform.rotation) as GameObject;
 
         /* ALSO SPAWN TF PUBLISHER AT MISSION START POSE */
         /* GameObject tfObject = Instantiate(missionOriginPrefab) as GameObject; */

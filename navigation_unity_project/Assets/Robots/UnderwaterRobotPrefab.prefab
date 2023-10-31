@@ -376,7 +376,7 @@ GameObject:
   - component: {fileID: 534441944}
   m_Layer: 7
   m_Name: UnderwaterRobotPrefab
-  m_TagString: Player
+  m_TagString: robot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

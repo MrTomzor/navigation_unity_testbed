@@ -99,9 +99,9 @@ public class VelocityCommandRosInterface : MonoBehaviour
         ab.AddTorque(transform.TransformDirection(angvel_error * angular_control_p + angvel_error_integral * angular_control_i));
         ab.AddForce(transform.TransformDirection(linear_error * linear_control_p + linear_error_integral * linear_control_i));
       }
-      Debug.Log("CURRENT VELOCITY AND ANGVELOCITY:");
-      Debug.Log(current_velocity);
-      Debug.Log(current_angular_velocity);
+      //Debug.Log("CURRENT VELOCITY AND ANGVELOCITY:");
+      //Debug.Log(current_velocity);
+      //Debug.Log(current_angular_velocity);
     }
     else{
       /* FORCE CONTROL */

@@ -54,7 +54,7 @@ MonoBehaviour:
   task: explore
   robotType: car
   robotPrefab_Jackal: {fileID: 2068798152515256585, guid: d189070ae37647280892854a5f7b26a1, type: 3}
-  robotPrefab_GenericSpace: {fileID: 316876391518084241, guid: c185964c99f809fcc957e47de637a30f, type: 3}
+  robotPrefab_GenericSpace: {fileID: 3822146274272320981, guid: f2e4ca018641cb2adb25f45f1bf088f5, type: 3}
   missionOriginPrefab: {fileID: 3620730582183390204, guid: 32435a41f104cc31794b905d801d16b5, type: 3}
   taskMaxTime: 60
   taskElapsedTime: 0
@@ -73,6 +73,7 @@ MonoBehaviour:
   dynamicGroundObjectNumerosity: 1
   dynamicNongroundObjectNumerosity: 1
   cloudsEnabled: 1
+  rainObjects: []
   rainEnabled: 0
   cloudsDensity: 0.8
   cloudsBaseRate: 300

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2068798150785200326}
   - component: {fileID: 2068798150785200327}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Collisions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54,7 +54,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2068798150823174194}
   - component: {fileID: 2068798150823174195}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: unnamed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,7 +100,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2068798150823358125}
   - component: {fileID: 2068798150823358114}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: unnamed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -146,7 +146,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2068798150863137448}
   - component: {fileID: 2068798150863137449}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: unnamed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -192,7 +192,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2068798150912068981}
   - component: {fileID: 2068798150912068970}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -237,7 +237,7 @@ GameObject:
   - component: {fileID: 2068798150919095108}
   - component: {fileID: 2068798150919095098}
   - component: {fileID: 2068798150919095109}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -322,7 +322,7 @@ GameObject:
   - component: {fileID: 2068798150944831096}
   - component: {fileID: 2068798150944831099}
   - component: {fileID: 2068798150944831098}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: imu_link
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -461,9 +461,9 @@ GameObject:
   - component: {fileID: 2068798150955265139}
   - component: {fileID: 419345550}
   - component: {fileID: 419345551}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: chassis_link
-  m_TagString: Untagged
+  m_TagString: robot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -560,7 +560,7 @@ ArticulationBody:
   m_JointFriction: 0.05
   m_Immovable: 0
   m_UseGravity: 1
-  m_CollisionDetectionMode: 0
+  m_CollisionDetectionMode: 1
 --- !u!114 &2068798150955265148
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -664,7 +664,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2068798150968049741}
   - component: {fileID: 2068798150968049730}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -712,7 +712,7 @@ GameObject:
   - component: {fileID: 2068798150972019162}
   - component: {fileID: 2068798150972019173}
   - component: {fileID: 2068798150972019172}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: rear_right_wheel_link
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -845,7 +845,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2068798151105925910}
   - component: {fileID: 2068798151105925911}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Collisions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -890,7 +890,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2068798151105943860}
   - component: {fileID: 2068798151105943861}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -935,7 +935,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2068798151132328827}
   - component: {fileID: 2068798151132328824}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: unnamed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -983,7 +983,7 @@ GameObject:
   - component: {fileID: 2068798151219333801}
   - component: {fileID: 2068798151219333800}
   - component: {fileID: 2068798151219333803}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: navsat_link
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1098,7 +1098,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2068798151237606726}
   - component: {fileID: 2068798151237606727}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Collisions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1314,7 +1314,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2068798151330879874}
   - component: {fileID: 2068798151330879875}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1368,7 +1368,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2068798151367144592
 Transform:
   m_ObjectHideFlags: 0
@@ -1505,7 +1505,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2068798151375183027}
   - component: {fileID: 2068798151375183024}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1553,7 +1553,7 @@ GameObject:
   - component: {fileID: 2068798151401742737}
   - component: {fileID: 2068798151401742736}
   - component: {fileID: 2068798151401742739}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: mid_mount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1672,7 +1672,7 @@ GameObject:
   - component: {fileID: 2068798151496999779}
   - component: {fileID: 2068798151496999778}
   - component: {fileID: 2068798151496999789}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: front_mount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1787,7 +1787,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2068798151538651628}
   - component: {fileID: 2068798151538651629}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1832,7 +1832,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2068798151551528328}
   - component: {fileID: 2068798151551528329}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: unnamed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1878,7 +1878,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2068798151559062317}
   - component: {fileID: 2068798151559062306}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Collisions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1923,7 +1923,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2068798151587162314}
   - component: {fileID: 2068798151587162315}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Box
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1956,7 +1956,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 0.8, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2068798151603798872
 GameObject:
@@ -1968,7 +1968,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2068798151603798873}
   - component: {fileID: 2068798151603798878}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: unnamed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2014,7 +2014,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2068798151640447195}
   - component: {fileID: 2068798151640447192}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: unnamed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2060,7 +2060,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2068798151677911710}
   - component: {fileID: 2068798151677911711}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Collisions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2107,7 +2107,7 @@ GameObject:
   - component: {fileID: 2068798151746955212}
   - component: {fileID: 2068798151746955215}
   - component: {fileID: 2068798151746955214}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: rear_left_wheel_link
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2240,7 +2240,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2068798151765037225}
   - component: {fileID: 2068798151765037230}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: unnamed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2286,7 +2286,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2068798151765633590}
   - component: {fileID: 2068798151765633591}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Collisions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2330,7 +2330,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2068798151776780837}
   - component: {fileID: 2068798151776780826}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2375,7 +2375,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2068798151790173172}
   - component: {fileID: 2068798151790173173}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: unnamed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2424,7 +2424,7 @@ GameObject:
   - component: {fileID: 2068798151808702002}
   - component: {fileID: 2068798151808702013}
   - component: {fileID: 2068798151808702012}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: front_left_wheel_link
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2559,7 +2559,7 @@ GameObject:
   - component: {fileID: 2068798151810185257}
   - component: {fileID: 2068798151810185256}
   - component: {fileID: 2068798151810185259}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: front_fender_link
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2674,7 +2674,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2068798151864210117}
   - component: {fileID: 2068798151864210106}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Collisions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2719,7 +2719,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2068798151906480816}
   - component: {fileID: 2068798151906480817}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2765,7 +2765,7 @@ GameObject:
   - component: {fileID: 2068798152002283224}
   - component: {fileID: 2068798152002283227}
   - component: {fileID: 2068798152002283226}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: rear_mount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2880,7 +2880,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2068798152028310138}
   - component: {fileID: 2068798152028310139}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2942,7 +2942,7 @@ GameObject:
   - component: {fileID: 2068798152130754146}
   - component: {fileID: 2068798152130754157}
   - component: {fileID: 2068798152130754156}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Plugins
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3250,7 +3250,7 @@ GameObject:
   - component: {fileID: 2068798152157967436}
   - component: {fileID: 2068798152157967439}
   - component: {fileID: 2068798152157967438}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: front_right_wheel_link
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3383,7 +3383,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2068798152164018238}
   - component: {fileID: 2068798152164018239}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Collisions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3427,7 +3427,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2068798152312692804}
   - component: {fileID: 2068798152312692805}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: unnamed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3473,7 +3473,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2068798152366697229}
   - component: {fileID: 2068798152366697218}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Collisions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3517,7 +3517,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2068798152389138744}
   - component: {fileID: 2068798152389138745}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: unnamed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3563,7 +3563,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2068798152397681491}
   - component: {fileID: 2068798152397681488}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Collisions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3608,7 +3608,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2068798152420274039}
   - component: {fileID: 2068798152420274036}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3652,7 +3652,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2068798152447184437}
   - component: {fileID: 2068798152447184426}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3697,7 +3697,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2068798152467719270}
   - component: {fileID: 2068798152467719271}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Collisions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3741,9 +3741,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2068798152515256588}
   - component: {fileID: 2068798152515256591}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Jackal
-  m_TagString: robot
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3791,7 +3791,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2068798152533759556}
   - component: {fileID: 2068798152533759557}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Collisions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3836,7 +3836,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2068798152555332299}
   - component: {fileID: 2068798152555332296}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3883,7 +3883,7 @@ GameObject:
   - component: {fileID: 2068798152600998973}
   - component: {fileID: 2068798152600998972}
   - component: {fileID: 2068798152600998975}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: rear_fender_link
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3998,7 +3998,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2068798152688546880}
   - component: {fileID: 2068798152688546881}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4042,7 +4042,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2068798152698337356}
   - component: {fileID: 2068798152698337357}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4088,7 +4088,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2068798152719269150}
   - component: {fileID: 2068798152719269151}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4134,7 +4134,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2068798152732401636}
   - component: {fileID: 2068798152732401637}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: unnamed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4180,7 +4180,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2068798152743330632}
   - component: {fileID: 2068798152743330633}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4225,7 +4225,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2068798152744263054}
   - component: {fileID: 2068798152744263055}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: unnamed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4268,6 +4268,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2068798151765037225}
     m_Modifications:
+    - target: {fileID: 946261272883265985, guid: 9db9bd327392f1283aba7947d8df0788, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 982652627714344431, guid: 9db9bd327392f1283aba7947d8df0788, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -4275,6 +4279,10 @@ PrefabInstance:
     - target: {fileID: 6330555561222262607, guid: 9db9bd327392f1283aba7947d8df0788, type: 3}
       propertyPath: m_Name
       value: jackal-wheel
+      objectReference: {fileID: 0}
+    - target: {fileID: 6330555561222262607, guid: 9db9bd327392f1283aba7947d8df0788, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7256337145093976972, guid: 9db9bd327392f1283aba7947d8df0788, type: 3}
       propertyPath: m_RootOrder
@@ -4378,6 +4386,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3778780666018925951, guid: c953cca3e90802097865c7ed6df9b574, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 4423768288878584487, guid: c953cca3e90802097865c7ed6df9b574, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -4385,6 +4397,10 @@ PrefabInstance:
     - target: {fileID: 9106891620698537378, guid: c953cca3e90802097865c7ed6df9b574, type: 3}
       propertyPath: m_Name
       value: jackal-fender
+      objectReference: {fileID: 0}
+    - target: {fileID: 9106891620698537378, guid: c953cca3e90802097865c7ed6df9b574, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c953cca3e90802097865c7ed6df9b574, type: 3}
@@ -4400,6 +4416,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2068798151551528328}
     m_Modifications:
+    - target: {fileID: 946261272883265985, guid: 9db9bd327392f1283aba7947d8df0788, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 982652627714344431, guid: 9db9bd327392f1283aba7947d8df0788, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -4407,6 +4427,10 @@ PrefabInstance:
     - target: {fileID: 6330555561222262607, guid: 9db9bd327392f1283aba7947d8df0788, type: 3}
       propertyPath: m_Name
       value: jackal-wheel
+      objectReference: {fileID: 0}
+    - target: {fileID: 6330555561222262607, guid: 9db9bd327392f1283aba7947d8df0788, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7256337145093976972, guid: 9db9bd327392f1283aba7947d8df0788, type: 3}
       propertyPath: m_RootOrder
@@ -4466,6 +4490,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2068798152732401636}
     m_Modifications:
+    - target: {fileID: 1096728865372517516, guid: ed67f62fa7d0bfb65b8ef3359058124c, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 1672612827306065466, guid: ed67f62fa7d0bfb65b8ef3359058124c, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -4514,6 +4542,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: jackal-base
       objectReference: {fileID: 0}
+    - target: {fileID: 4333374381835488866, guid: ed67f62fa7d0bfb65b8ef3359058124c, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5528810482051044728, guid: ed67f62fa7d0bfb65b8ef3359058124c, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -4532,6 +4564,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2068798152312692804}
     m_Modifications:
+    - target: {fileID: 946261272883265985, guid: 9db9bd327392f1283aba7947d8df0788, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 982652627714344431, guid: 9db9bd327392f1283aba7947d8df0788, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -4539,6 +4575,10 @@ PrefabInstance:
     - target: {fileID: 6330555561222262607, guid: 9db9bd327392f1283aba7947d8df0788, type: 3}
       propertyPath: m_Name
       value: jackal-wheel
+      objectReference: {fileID: 0}
+    - target: {fileID: 6330555561222262607, guid: 9db9bd327392f1283aba7947d8df0788, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7256337145093976972, guid: 9db9bd327392f1283aba7947d8df0788, type: 3}
       propertyPath: m_RootOrder
@@ -4598,6 +4638,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2068798151640447195}
     m_Modifications:
+    - target: {fileID: 946261272883265985, guid: 9db9bd327392f1283aba7947d8df0788, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 982652627714344431, guid: 9db9bd327392f1283aba7947d8df0788, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -4605,6 +4649,10 @@ PrefabInstance:
     - target: {fileID: 6330555561222262607, guid: 9db9bd327392f1283aba7947d8df0788, type: 3}
       propertyPath: m_Name
       value: jackal-wheel
+      objectReference: {fileID: 0}
+    - target: {fileID: 6330555561222262607, guid: 9db9bd327392f1283aba7947d8df0788, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7256337145093976972, guid: 9db9bd327392f1283aba7947d8df0788, type: 3}
       propertyPath: m_RootOrder
@@ -4708,6 +4756,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3778780666018925951, guid: c953cca3e90802097865c7ed6df9b574, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 4423768288878584487, guid: c953cca3e90802097865c7ed6df9b574, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -4715,6 +4767,10 @@ PrefabInstance:
     - target: {fileID: 9106891620698537378, guid: c953cca3e90802097865c7ed6df9b574, type: 3}
       propertyPath: m_Name
       value: jackal-fender
+      objectReference: {fileID: 0}
+    - target: {fileID: 9106891620698537378, guid: c953cca3e90802097865c7ed6df9b574, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c953cca3e90802097865c7ed6df9b574, type: 3}

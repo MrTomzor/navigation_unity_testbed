@@ -2,7 +2,7 @@ world_name: "forest1" # [station, forest1]
 
 session_seed: 42
 
-reload_scene: false
+reload_scene: true
 respawn_random_objects: true
 
 robot_type: "jackal" # generic_space = gravity-disabled floating camera and IMU, jackal = ClearPath robotics Jackal with Twist controller
@@ -41,7 +41,7 @@ clouds_average_velocity_z: 100 #in meters per second in the z direction of Unity
 
 distracting_particles_enabled: true # dust from ground, 
 
-rain_enabled: false # dust from ground, 
+rain_enabled: false # rain, 
 
 mediumsize_object_randomization_enabled: true
 mediumsize_object_randomization_rate: 0.2 # rate of varaiation relative to the default state (seen in editor) - will move some, delete/enable others
