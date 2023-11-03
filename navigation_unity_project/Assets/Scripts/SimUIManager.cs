@@ -80,9 +80,21 @@ public class SimUIManager : MonoBehaviour
         }
       }
 
+      if(controlledRobot == null){
+         var res = GameObject.FindGameObjectsWithTag("robot");
+         if(res.Length > 0){
+           controlledRobot = res[0];
+         }
+      }
+
       if(Input.GetKeyDown("m")){
-        manualControlOn = !manualControlOn;
-        controlledRobot.BroadcastMessage("ToggleManualControl", manualControlOn);
+        if(controlledRobot != null){
+          manualControlOn = !manualControlOn;
+          controlledRobot.BroadcastMessage("ToggleManualControl", manualControlOn);
+        }
+        else{
+          Debug.Log("CANNOT SET MANUAL CONTROL OF ROBOT, NO OBJECTS WITH robot TAG FOUND!");
+        }
       }
 
       double realtime = Time.realtimeSinceStartup;
