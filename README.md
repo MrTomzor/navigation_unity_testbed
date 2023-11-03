@@ -45,13 +45,12 @@ Available:
 - IMUROSPublisher.cs script for turning any GameObject with a Rigidbody intu an IMU sensor with gaussian noise
 - RGBCameraROSPublisher.cs script for turning any camera in Unity into a camera that publishes data into ROS
 - ROSSIngleTransformPublisher.cs script for publishing ground-truth pose for debugging and evaluating methods (a transform is published between the robot and its last spawnpoint, and also between the robot and the world coodinate frame origin)
-- 2 available simplified robots - "generic_wheeled" robot with wheels and a car-like controller, and a "generic_space" (also called underwater in the project) robot which is fully velocity/force controlled (through Twist messages) and has gravity disabled
+- 2 available robots - ClearPath Robotics "jackal" robot with wheels and built-in velocity controller, and a "generic_space" robot which is fully velocity/force controlled (through Twist messages) and has gravity disabled
 - URDF importing of other robots is possible through the [URDF-Importer](https://github.com/Unity-Technologies/URDF-Importer) package, but is untested as of now.
   
 In progress:
 - depth cameras, ultrasound rangefinder, fixing generic_wheeled robot ROS control
 ### Coming soon
-- Importing the Jackal ground robot with the Unity URDF importer and a tutorial on importing additional robots - Expected towards the end of October 2023.
 - Adding a replicable benchmark of robust vision-based navigation, as proposed in the [workshop paper](https://drive.google.com/drive/folders/1P0P6gtV69hoTc37NbpVFxB2imXVYpxip) - Expected towards the end of November 2023.
 - Procedural generation of forest / alien planet environments - Expected November 2023.
 - Comparison of state-of-the-art SLAM and visual place recognition algorithms on the simulated extreme conditions - Expected December 2023
@@ -65,4 +64,4 @@ The ones in normal text are available through the simulator in some way, the one
 - Large difference between realtime factor when running the game in the Editor and when running the built version (getting RTF of ~1.0 in the forest when the debug camera is disabled in Editor,but in the build, the RTF does not improve when debug cam is disabled in the built game and stays around 0.6 on a standard laptop). It's likely a problem with some project settings and timestep configuration.
 
 ## Builds
-Build 1.0 for Linux can be downloaded [here](https://nasmrs.felk.cvut.cz/index.php/s/pb72nPHCTmn9cF2). On startup, it will load up a "generic_space" robot with a monocular camera in the "forest1" scene. To change the scenes, modify the config file "ros_packages/navigation_unity_core/unity_world_config/default.yaml" and then apply it by running "rosrun navigation_unity_core default_world_loader.py". Any feedback is welcome!
+Build 2.0 for Linux can be downloaded [here](https://nasmrs.felk.cvut.cz/index.php/s/xIeDZh004di65Rn). On startup, it will load up a "jackal" robot with a monocular camera in the "forest1" scene. To change the scenes, modify the config file "ros_packages/navigation_unity_core/unity_world_config/default.yaml" and then apply it by running "rosrun navigation_unity_core default_world_loader.py". An older build 1.0 can be dowloaded here [here](https://nasmrs.felk.cvut.cz/index.php/s/pb72nPHCTmn9cF2). Any feedback is welcome!
