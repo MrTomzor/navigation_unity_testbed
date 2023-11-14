@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Unity.Robotics.ROSTCPConnector;
 /* using RosColor = RosMessageTypes.UnityRoboticsDemo.UnityColorMsg; */
-using TwistStampedMsg = RosMessageTypes.Geometry.TwistStampedMsg;
+using TwistMsg = RosMessageTypes.Geometry.TwistMsg;
 
 public class VelocityCommandRosInterface : MonoBehaviour
 {
@@ -33,7 +33,7 @@ public class VelocityCommandRosInterface : MonoBehaviour
 
   void Start()
   {
-    ROSConnection.GetOrCreateInstance().Subscribe<TwistStampedMsg >(ref_topic_name, SetReferenceVelocity);
+    ROSConnection.GetOrCreateInstance().Subscribe<TwistMsg >(ref_topic_name, SetReferenceVelocity);
   }
 
   // Update is called once per frame
@@ -110,18 +110,18 @@ public class VelocityCommandRosInterface : MonoBehaviour
     }
   }
 
-  void SetReferenceVelocity(TwistStampedMsg  msg)
+  void SetReferenceVelocity(TwistMsg  msg)
   {
-    ref_linear.x = -(float)msg.twist.linear.y;
-    ref_linear.y = (float)msg.twist.linear.z;
-    ref_linear.z = (float)msg.twist.linear.x;
+    ref_linear.x = -(float)msg.linear.y;
+    ref_linear.y = (float)msg.linear.z;
+    ref_linear.z = (float)msg.linear.x;
 
     /* ref_rotation.x = (float)msg.twist.angular.x; */
     /* ref_rotation.y = (float)msg.twist.angular.y; */
     /* ref_rotation.z = (float)msg.twist.angular.z; */
-    ref_rotation.x = (float)msg.twist.angular.y;
-    ref_rotation.y = -(float)msg.twist.angular.z;
-    ref_rotation.z = -(float)msg.twist.angular.x;
+    ref_rotation.x = (float)msg.angular.y;
+    ref_rotation.y = -(float)msg.angular.z;
+    ref_rotation.z = -(float)msg.angular.x;
   }
 
   public void ToggleManualControl(bool b){
