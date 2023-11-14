@@ -11,6 +11,7 @@ TagManager:
   - DistractingParticles
   - RandomizerGroups
   - Rain
+  - ROS_CONNECTION
   layers:
   - Default
   - TransparentFX

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7289287684875766108}
   m_Layer: 0
   m_Name: GenericSpaceRobot
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39,6 +39,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7289287684875766108}
     m_Modifications:
+    - target: {fileID: 316876391110351688, guid: c185964c99f809fcc957e47de637a30f, type: 3}
+      propertyPath: _frameId
+      value: cam0
+      objectReference: {fileID: 0}
     - target: {fileID: 316876391518084241, guid: c185964c99f809fcc957e47de637a30f, type: 3}
       propertyPath: m_Name
       value: chassis_link
@@ -46,6 +50,10 @@ PrefabInstance:
     - target: {fileID: 316876391518084241, guid: c185964c99f809fcc957e47de637a30f, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 316876391518084252, guid: c185964c99f809fcc957e47de637a30f, type: 3}
+      propertyPath: enableGameControl
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 316876391518084255, guid: c185964c99f809fcc957e47de637a30f, type: 3}
       propertyPath: m_RootOrder
@@ -98,3 +106,23 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 316876391518084255, guid: c185964c99f809fcc957e47de637a30f, type: 3}
   m_PrefabInstance: {fileID: 8799505711242027166}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &9114118740357594127 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 316876391518084241, guid: c185964c99f809fcc957e47de637a30f, type: 3}
+  m_PrefabInstance: {fileID: 8799505711242027166}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &316876391502690510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9114118740357594127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f20600fdf7f7c0d07be63112a42ee0a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PublishRateHz: 20
+  origFrame: world_origin
+  targetFrame: robot1/chassis_link

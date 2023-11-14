@@ -7,10 +7,10 @@ using UnityEditor;
 
 namespace URP.Sensor
 {
-    [RequireComponent(typeof(Rigidbody))]
     public class IMU : MonoBehaviour
     {
         private Rigidbody _rb;
+        private ArticulationBody _ab;
         private Transform _trans;
 
         // Previous value
@@ -49,6 +49,7 @@ namespace URP.Sensor
         {
             this._trans = this.GetComponent<Transform>();
             this._rb = this.GetComponent<Rigidbody>();
+            this._ab = this.GetComponent<ArticulationBody>();
             this._geometryQuaternion = new Vector4();
             this._angularVelocity = new Vector3();
             this._linearAcceleration = new Vector3();
@@ -58,7 +59,13 @@ namespace URP.Sensor
         {
             // Update Object State //
             // Calculate Move Element
-            Vector3 localLinearVelocity = this._trans.InverseTransformDirection(this._rb.velocity);
+            Vector3 localLinearVelocity;
+            if(_rb){
+                localLinearVelocity = this._trans.InverseTransformDirection(this._rb.velocity);
+            }
+            else{
+                localLinearVelocity = this._trans.InverseTransformDirection(this._ab.velocity);
+            }
             /* Vector3 acceleration = (localLinearVelocity - this._lastVelocity) / Time.deltaTime; */
             Vector3 acceleration = (localLinearVelocity - this._lastVelocity) / Time.fixedDeltaTime;
             this._lastVelocity = localLinearVelocity;
@@ -69,7 +76,12 @@ namespace URP.Sensor
 
             // Raw
             this._geometryQuaternion = new Vector4(this._trans.rotation.x, this._trans.rotation.y, this._trans.rotation.z, this._trans.rotation.w);
-            this._angularVelocity = -1 * this.transform.InverseTransformVector(this.GetComponent<Rigidbody>().angularVelocity);
+            if(_rb){
+                this._angularVelocity = -1 * this.transform.InverseTransformVector(this.GetComponent<Rigidbody>().angularVelocity);
+            }
+            else{
+                this._angularVelocity = -1 * this.transform.InverseTransformVector(this.GetComponent<ArticulationBody>().angularVelocity);
+            }
             this._linearAcceleration = acceleration;
 
             // Apply Gaussian Noise

@@ -35,8 +35,8 @@ public class RGBCameraROSPublisher : MonoBehaviour
 
     // setup ROS
     this._ros = ROSConnection.GetOrCreateInstance();
-    this._infoTopicName = this._topicName + "/info";
-    this._topicName += "/compressed";
+    this._infoTopicName = this._topicName + "/camera_info";
+    this._topicName += "/image/compressed";
     this._ros.RegisterPublisher<CompressedImageMsg>(this._topicName);
     this._ros.RegisterPublisher<CameraInfoMsg>(this._infoTopicName);
 

@@ -12,7 +12,7 @@ using RosMessageTypes.Geometry;
 public class IMUROSPublisher : MonoBehaviour
 {
 
-    [SerializeField] public string _topicName = "imu/raw_data";
+    [SerializeField] public string _topicName = "imu/raw";
     [SerializeField] public string _frameId = "imu_link";
 
     private float _timeElapsed = 0f;

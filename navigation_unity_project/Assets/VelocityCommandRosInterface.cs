@@ -119,9 +119,9 @@ public class VelocityCommandRosInterface : MonoBehaviour
     /* ref_rotation.x = (float)msg.twist.angular.x; */
     /* ref_rotation.y = (float)msg.twist.angular.y; */
     /* ref_rotation.z = (float)msg.twist.angular.z; */
-    ref_rotation.x = -(float)msg.twist.angular.y;
-    ref_rotation.y = (float)msg.twist.angular.z;
-    ref_rotation.z = (float)msg.twist.angular.x;
+    ref_rotation.x = (float)msg.twist.angular.y;
+    ref_rotation.y = -(float)msg.twist.angular.z;
+    ref_rotation.z = -(float)msg.twist.angular.x;
   }
 
   public void ToggleManualControl(bool b){

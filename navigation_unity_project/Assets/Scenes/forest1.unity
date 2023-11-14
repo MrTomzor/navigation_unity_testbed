@@ -7438,6 +7438,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RAIN_OBJECT
       objectReference: {fileID: 0}
+    - target: {fileID: 1751264555342167042, guid: 4eab659f8032cb8faa8924ce0307168c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1751264555342167043, guid: 4eab659f8032cb8faa8924ce0307168c, type: 3}
       propertyPath: target
       value: 
@@ -10403,21 +10407,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 9114118740357594127, guid: f2e4ca018641cb2adb25f45f1bf088f5, type: 3}
   m_PrefabInstance: {fileID: 9114118740305483864}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &316876391502690510
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 316876391502690503}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f20600fdf7f7c0d07be63112a42ee0a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_PublishRateHz: 20
-  origFrame: world_origin
-  targetFrame: robot1/chassis_link
 --- !u!1001 &1104843512585044509
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10493,10 +10482,6 @@ PrefabInstance:
     - target: {fileID: 3822146274272320981, guid: f2e4ca018641cb2adb25f45f1bf088f5, type: 3}
       propertyPath: m_IsActive
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3822146274272320981, guid: f2e4ca018641cb2adb25f45f1bf088f5, type: 3}
-      propertyPath: m_TagString
-      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 7289287684875766108, guid: f2e4ca018641cb2adb25f45f1bf088f5, type: 3}
       propertyPath: m_RootOrder

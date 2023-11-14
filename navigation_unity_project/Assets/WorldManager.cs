@@ -542,6 +542,7 @@ scene_modify_flag  = true;
       scene_init_flag  = true;
       scene_load_flag = false;
       do_respawning_flag  = true;
+      Destroy(GameObject.FindGameObjectsWithTag("ROS_CONNECTION")[0]);
       SceneManager.LoadScene(world_name, LoadSceneMode.Single);
       return;
     }

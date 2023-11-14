@@ -6,7 +6,7 @@ using Unity.Robotics.Core;
 
 public class SimUIManager : MonoBehaviour
 {
-    private bool manualControlOn = true;
+    private bool manualControlOn = false;
     private bool debugCameraOn = false;
 
     public GameObject controlledRobot;
@@ -48,11 +48,11 @@ public class SimUIManager : MonoBehaviour
     void RefreshText(){
       mainStatsText.text = "";
       mainStatsText.text += "ManualControl: ";
-      mainStatsText.text += manualControlOn ? "ON" : "OFF (press M)";
+      mainStatsText.text += manualControlOn ? "ON (press M)" : "OFF (press M)";
       mainStatsText.text += "\n";
 
       mainStatsText.text += "DebugCamera: ";
-      mainStatsText.text += debugCameraOn ? "ON" : "OFF (press R)";
+      mainStatsText.text += debugCameraOn ? "ON (press R)" : "OFF (press R)";
       mainStatsText.text += "\n";
 
       mainStatsText.text += "RealTime: " + Time.realtimeSinceStartup;

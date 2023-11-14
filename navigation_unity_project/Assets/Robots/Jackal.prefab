@@ -461,6 +461,9 @@ GameObject:
   - component: {fileID: 2068798150955265139}
   - component: {fileID: 419345550}
   - component: {fileID: 419345551}
+  - component: {fileID: 1013588893}
+  - component: {fileID: 1013588902}
+  - component: {fileID: 1013588903}
   m_Layer: 7
   m_Name: chassis_link
   m_TagString: robot
@@ -560,7 +563,7 @@ ArticulationBody:
   m_JointFriction: 0.05
   m_Immovable: 0
   m_UseGravity: 1
-  m_CollisionDetectionMode: 1
+  m_CollisionDetectionMode: 0
 --- !u!114 &2068798150955265148
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -614,8 +617,8 @@ MonoBehaviour:
   angular_control_i: 20
   ground_raycast_len: 0.75
   ref_linear: {x: 0, y: 0, z: 0}
-  ref_rotation: {x: 0, y: 2, z: 0}
-  enableGameControl: 1
+  ref_rotation: {x: 0, y: 0, z: 0}
+  enableGameControl: 0
   mouseSensitivity: 0.5
   linearGameControlSensitivity: 3
   velocityControl: 1
@@ -654,6 +657,99 @@ MonoBehaviour:
   m_PublishRateHz: 100
   origFrame: world_origin
   targetFrame: robot1/chassis_link
+--- !u!65 &1013588893
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2068798150955265145}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.26998138, y: 0.12705243, z: 0.44383478}
+  m_Center: {x: 0, y: 0.10528237, z: 0.01785779}
+--- !u!114 &1013588902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2068798150955265145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdd3a4316283ac3b791bd8030be031b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _topicName: robot1/imu_raw
+  _frameId: imu_link
+  _message:
+    orientation:
+      x: 0
+      y: 0
+      z: 0
+      w: 1
+    orientation_covariance:
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    angular_velocity:
+      x: 0
+      y: 0
+      z: 0
+    angular_velocity_covariance:
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    linear_acceleration:
+      x: 0
+      y: 0
+      z: 0
+    linear_acceleration_covariance:
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+--- !u!114 &1013588903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2068798150955265145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ef134dd4b78d1c4393ccd56adcb336d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _scanRate: 100
+  enableGaussianNoise: 0
+  enableBiasNoise: 0
+  setting:
+    quatSigma: {x: 0, y: 0, z: 0, w: 0}
+    quatBias: {x: 0, y: 0, z: 0, w: 0}
+    angVelSigma: {x: 0, y: 0, z: 0}
+    angVelBias: {x: 0, y: 0, z: 0}
+    linAccSigma: {x: 0, y: 0, z: 0}
+    linAccBias: {x: 0, y: 0, z: 0}
 --- !u!1 &2068798150968049740
 GameObject:
   m_ObjectHideFlags: 0
@@ -3569,7 +3665,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2068798152397681491
 Transform:
   m_ObjectHideFlags: 0
