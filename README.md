@@ -46,13 +46,13 @@ Available:
 - RGBCameraROSPublisher.cs script for turning any camera in Unity into a camera that publishes data into ROS
 - ROSSIngleTransformPublisher.cs script for publishing ground-truth pose for debugging and evaluating methods (a transform is published between the robot and its last spawnpoint, and also between the robot and the world coodinate frame origin)
 - 2 available robots - ClearPath Robotics "jackal" robot with wheels and built-in velocity controller, and a "generic_space" robot which is fully velocity/force controlled (through Twist messages) and has gravity disabled
-- URDF importing of other robots is possible through the [URDF-Importer](https://github.com/Unity-Technologies/URDF-Importer) package, but is untested as of now.
+- URDF importing of other robots is possible through the [URDF-Importer](https://github.com/Unity-Technologies/URDF-Importer) package. Adding new robots this way is only available through the Unity Editor and not on runtime, and needs a small amount of assembly - specifically you have to add the IMU, camera and camera publishing components onto the robot GameObject manually. To control wheeled robots, it's easiest to make the wheels spin freely and adding the VelocityControl component in car mode (you can take inspiration from the Jackal robot). 
   
 In progress:
-- depth cameras, ultrasound rangefinder, fixing generic_wheeled robot ROS control
+- quadrotor UAV, multi-robot support, depth cameras, ultrasound rangefinder
 ### Coming soon
-- Adding a replicable benchmark of robust vision-based navigation, as proposed in the [workshop paper](https://drive.google.com/drive/folders/1P0P6gtV69hoTc37NbpVFxB2imXVYpxip) - Expected towards the end of November 2023.
-- Procedural generation of forest / alien planet environments - Expected November 2023.
+- Adding a replicable benchmark of robust vision-based navigation, as proposed in the [workshop paper](https://drive.google.com/drive/folders/1P0P6gtV69hoTc37NbpVFxB2imXVYpxip) - Expected towards the end of December 2023.
+- Procedural generation of forest / alien planet environments - Expected December 2023.
 - Comparison of state-of-the-art SLAM and visual place recognition algorithms on the simulated extreme conditions - Expected December 2023
 
 ### Challenges for robustness
