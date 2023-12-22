@@ -364,9 +364,18 @@ public class WorldManager : MonoBehaviour
     if(!WorldManager.some_ros_conn_spawned){
       /* SPAWN FIRST ROS CONN AND KEEP IT UNKILLABLE */
       /* GameObject conn_obj = GameObject.Instantiate(rosconnPrefab); */
-
-      GameObject conn_obj = FindObjectOfType<ROSConnection>().gameObject;
-      DontDestroyOnLoad(conn_obj);
+      var objfindres = FindObjectOfType<ROSConnection>();
+      if (objfindres != null){
+        Debug.Log("FOUND ROSCONN OBJECT");
+        GameObject conn_obj = objfindres.gameObject;
+        DontDestroyOnLoad(conn_obj);
+      }
+      else{
+        Debug.Log("SPAWNING ROSCONN OBJECT");
+        GameObject conn_obj = Instantiate(rosconnPrefab);
+        DontDestroyOnLoad(conn_obj);
+      }
+      
       WorldManager.some_ros_conn_spawned = true;
     }
 
