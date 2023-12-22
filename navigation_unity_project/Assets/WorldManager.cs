@@ -25,6 +25,7 @@ public class WorldManager : MonoBehaviour
   public static string world_name;
   public static string spawn_area;
   public static int spawn_area_point_index;
+  public static bool some_ros_conn_spawned = false;
 
   public static bool scene_init_flag = false;
   private bool scene_load_flag = false;
@@ -43,6 +44,7 @@ public class WorldManager : MonoBehaviour
   public GameObject robotPrefab_Jackal;
   public GameObject robotPrefab_GenericSpace;
   public GameObject missionOriginPrefab;
+  public GameObject rosconnPrefab;
 
   public double taskMaxTime = 60;
   public double taskElapsedTime = 0;
@@ -162,8 +164,8 @@ public class WorldManager : MonoBehaviour
       /* output.WriteLine(((YamlScalarNode)entry.Key).Value); */
       var key = ((YamlScalarNode)entry.Key).Value;
       var val = ((YamlScalarNode)entry.Value).Value;
-      Debug.Log(key);
-      Debug.Log(val);
+      /* Debug.Log(key); */
+      /* Debug.Log(val); */
 
       /* TODO move this to loading from string */
       if(key == "session_seed"){
@@ -359,12 +361,22 @@ public class WorldManager : MonoBehaviour
   // Start is called before the first frame update
   void Start()
   {
+    if(!WorldManager.some_ros_conn_spawned){
+      /* SPAWN FIRST ROS CONN AND KEEP IT UNKILLABLE */
+      /* GameObject conn_obj = GameObject.Instantiate(rosconnPrefab); */
+
+      GameObject conn_obj = FindObjectOfType<ROSConnection>().gameObject;
+      DontDestroyOnLoad(conn_obj);
+      WorldManager.some_ros_conn_spawned = true;
+    }
+
     /* INIT ROS */
     this._ros = ROSConnection.GetOrCreateInstance();
     this._ros.RegisterPublisher<NavigationTaskDefinitionMsg>(this._taskdefTopicName);
     this._ros.RegisterPublisher<StringMsg>(this._robotSleepStateTopicName);
     /* this._ros.Subscribe<StringMsg>("/world_config", HandleWorldConfigMsg); */
     this._ros.ImplementService<ResetWorldRequest, ResetWorldResponse>("/reset_world", handleWorldResetRequest);
+
 
     /* FIND STUFF */
     FindLinkedObjects();
@@ -421,8 +433,8 @@ public class WorldManager : MonoBehaviour
       /* output.WriteLine(((YamlScalarNode)entry.Key).Value); */
       var key = ((YamlScalarNode)entry.Key).Value;
       var val = ((YamlScalarNode)entry.Value).Value;
-      Debug.Log(key);
-      Debug.Log(val);
+      /* Debug.Log(key); */
+      /* Debug.Log(val); */
 
       if(key == "world_name"){
         /* SET LOAD SCENE FLAG (do in next update) */
@@ -436,7 +448,7 @@ public class WorldManager : MonoBehaviour
           scene_load_flag = true;
         }
         else{
-scene_modify_flag  = true;
+          scene_modify_flag  = true;
         }
       }
 
@@ -539,10 +551,17 @@ scene_modify_flag  = true;
   {
 
     if(scene_load_flag){
+      Debug.Log("EXECUTING SCENE LOAD FLAG");
       scene_init_flag  = true;
       scene_load_flag = false;
       do_respawning_flag  = true;
-      Destroy(GameObject.FindGameObjectsWithTag("ROS_CONNECTION")[0]);
+      /* Destroy(GameObject.FindGameObjectsWithTag("ROS_CONNECTION")[0]); */
+      /* this._ros.Disconnect(); */
+      /* var ros_gobject = this._ros.gameObject; */
+      /* Destroy(this._ros); */
+      /* Destroy(FindObjectOfType<ROSConnection>().gameObject); */
+      /* Destroy(ros_gobject); */
+      /* Debug.Log("DELETED ROSCONN"); */
       SceneManager.LoadScene(world_name, LoadSceneMode.Single);
       return;
     }

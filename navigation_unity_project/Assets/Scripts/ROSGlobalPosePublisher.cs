@@ -33,33 +33,11 @@ public class ROSGlobalPosePublisher: MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ROSConnection.GetOrCreateInstance().Subscribe<PoseMsg>(targetFrame + "/teleport", Teleport);
 
         m_ROS = ROSConnection.GetOrCreateInstance();
+        /* m_ROS.Subscribe<PoseMsg>(targetFrame + "/teleport", Teleport); */
         m_ROS.RegisterPublisher<TFMessageMsg>(k_TfTopic);
         m_LastPublishTimeSeconds = Clock.time + PublishPeriodSeconds;
-    }
-
-    void Teleport(PoseMsg msg){
-      Vector3 pos;
-      pos.x = (float)msg.position.x;
-      pos.y = (float)msg.position.y;
-      pos.z = (float)msg.position.z;
-      pos = FLU.ConvertToRUF(pos);
-      Quaternion q;
-      q.x = (float)msg.orientation.x;
-      q.y = (float)msg.orientation.y;
-      q.z = (float)msg.orientation.z;
-      q.w = (float)msg.orientation.w;
-      q = FLU.ConvertToRUF(q);
-
-      if(GetComponent<ArticulationBody>()){
-        GetComponent<ArticulationBody>().TeleportRoot(pos, q);
-      }
-      else{
-        transform.position = pos;
-        transform.rotation = q;
-      }
     }
 
     void PublishMessage()

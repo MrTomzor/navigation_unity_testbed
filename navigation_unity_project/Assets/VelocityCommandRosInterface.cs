@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 
-using UnityEngine;
 using Unity.Robotics.ROSTCPConnector;
+using Unity.Robotics.ROSTCPConnector.ROSGeometry;
 /* using RosColor = RosMessageTypes.UnityRoboticsDemo.UnityColorMsg; */
+using UnityEngine;
+
 using TwistMsg = RosMessageTypes.Geometry.TwistMsg;
 
 public class VelocityCommandRosInterface : MonoBehaviour
@@ -33,6 +35,7 @@ public class VelocityCommandRosInterface : MonoBehaviour
 
   void Start()
   {
+    ROSConnection.GetOrCreateInstance().Unsubscribe(ref_topic_name);
     ROSConnection.GetOrCreateInstance().Subscribe<TwistMsg >(ref_topic_name, SetReferenceVelocity);
   }
 

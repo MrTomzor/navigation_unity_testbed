@@ -33,16 +33,6 @@ public class SimUIManager : MonoBehaviour
       rtfLastClocktime = Clock.time;
       texture = new RenderTexture (800, 480, 24);
 
-      if(debugCamera == null){
-        var res = GameObject.FindGameObjectsWithTag("DebugCamera");
-        if(res.Length > 0){
-          debugCamera = res[0];
-        }
-      }
-      if(debugCamera != null){
-        debugCamera.SetActive(false);
-        debugCameraOn = false;
-      }
     }
 
     void RefreshText(){
@@ -66,6 +56,14 @@ public class SimUIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+      if(debugCamera == null){
+        var res = GameObject.FindGameObjectsWithTag("DebugCamera");
+        if(res.Length > 0){
+          debugCamera = res[0];
+        }
+        debugCamera.SetActive(debugCameraOn);
+      }
+
       if(Input.GetKeyDown("r")){
         if(debugCamera == null){
           var res = GameObject.FindGameObjectsWithTag("DebugCamera");
